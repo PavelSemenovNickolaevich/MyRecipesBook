@@ -5,7 +5,7 @@ import ru.android.myrecipesbook.enums.Ingredients
 import ru.android.myrecipesbook.enums.Meals
 import ru.android.myrecipesbook.model.Recipe
 
-class FakeFoodRepository {
+object FakeFoodRepository {
 
     private val frenchToastsWithStrawberry: Recipe = Recipe(
         "Французские тосты с клубникой",
@@ -17,7 +17,7 @@ class FakeFoodRepository {
         listOf(),
         true,
         4,
-        "drawable/french_toast_with_strawsberry.png",
+        R.drawable.french_toast_with_strawsberry,
         2
     )
 
@@ -38,7 +38,7 @@ class FakeFoodRepository {
         listOf(),
         false,
         4,
-        "drawable/toast_with_sugar_image.png",
+        R.drawable.toast_with_sugar_image,
         2
     )
 
@@ -52,7 +52,7 @@ class FakeFoodRepository {
         listOf(),
         true,
         5,
-        "drawable/fish_dish.png",
+        R.drawable.fish_dish,
         1
     )
 
@@ -72,7 +72,7 @@ class FakeFoodRepository {
         listOf(),
         true,
         3,
-        "drawable/blueberry_muffins.png",
+        R.drawable.blueberry_muffins,
         4
     )
 
@@ -92,7 +92,7 @@ class FakeFoodRepository {
         listOf(),
         true,
         5,
-        "drawable/asian_chicken_glazed_thighs.png",
+        R.drawable.asian_chicken_glazed_thighs,
         2
     )
 
@@ -105,7 +105,6 @@ class FakeFoodRepository {
             blueberryMuffins,
             asianGlazedChickenThighs
         )
-
     }
 
     fun orderByRates(list: List<Recipe>, isAscendig: Boolean): List<Recipe> {
@@ -120,18 +119,7 @@ class FakeFoodRepository {
         return if (isMore) list.filter { it.calories > calories } else list.filter { it.calories < calories }
     }
 
-    fun getFilterRecipesByTime(list: List<Recipe>, timeMax: Long, timeMin: Long = 0): List<Recipe> {
+    fun getFilterRecipesByTime(list: List<Recipe>, timeMax: Long, timeMin: Long): List<Recipe> {
         return list.filter { it.timeForCooking in timeMin..timeMax }
     }
-
-}
-
-fun main() {
-    val test: FakeFoodRepository = FakeFoodRepository()
-    println(test.getListOfDishes())
-    println(test.orderByRates(test.getListOfDishes(), true))
-    println(test.orderByRates(test.getListOfDishes(), false))
-    println(test.getFilterListByMeals(test.getListOfDishes(), Meals.SUPPER))
-    println(test.getFilterListByCalories(test.getListOfDishes(), 300, true))
-    println(test.getFilterRecipesByTime(test.getListOfDishes(), 10))
 }

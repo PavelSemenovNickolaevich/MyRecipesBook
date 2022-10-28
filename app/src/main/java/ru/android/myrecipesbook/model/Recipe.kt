@@ -1,5 +1,6 @@
 package ru.android.myrecipesbook.model
 
+import androidx.annotation.DrawableRes
 import ru.android.myrecipesbook.enums.FoodCategory
 import ru.android.myrecipesbook.enums.Ingredients
 import ru.android.myrecipesbook.enums.Meals
@@ -14,9 +15,6 @@ data class Recipe(
     val stepsOfCooking: List<String>,
     val isFavoriteDish: Boolean,
     @androidx.annotation.IntRange(from = 1, to = 5) val rating: Int,
-    val resourceLinkImage: String,
+    @DrawableRes val resourceLinkImage: Int,
     val numOfServings: Int
-) {
-
-
-}
+)

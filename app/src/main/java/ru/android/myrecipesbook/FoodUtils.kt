@@ -23,12 +23,5 @@ class FoodUtils {
             }
         }
         return id
-
     }
-}
-
-fun main() {
-    val path: FoodUtils = FoodUtils()
-    println(path.resolveFoodIngredient(Ingredients.SUGAR))
-    println(path.resolveFoodIngredient(Ingredients.EGGS))
 }
