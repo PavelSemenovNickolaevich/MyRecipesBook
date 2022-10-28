@@ -42,4 +42,5 @@ dependencies {
     implementation libraries.espressoCore
     implementation libraries.junit
     implementation libraries.junitExt
+    implementation libraries.supportAnnotations
 }
