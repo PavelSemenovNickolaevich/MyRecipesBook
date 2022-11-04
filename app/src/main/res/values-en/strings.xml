@@ -31,4 +31,33 @@
     <string name="breakfast_title">Breakfast</string>
     <!--General views elements-->
 
+    <!--Welcome view-->
+    <string name="registration_welcome">Registration</string>
+    <string name="enter">Sign in</string>
+    <string name="daily_recipe_main_header">Daily Recipe</string>
+    <string name="daily_recipe_second_header">Cooking Done The Easy Way</string>
+    <!--Welcome view-->
+
+
+    <!--Error message-->
+    <string name="wrong_password">Password must contain at least 6 characters!</string>
+    <string name="wrong_email">Email must be at least 5 characters long and contain @!</string>
+    <string name="wrong_name">The name must contain at least 3 characters!</string>
+    <!--Error message-->
+
+    <!--Ingredients-->
+    <string name="sugar_name">sugar</string>
+    <string name="butter_name">butter</string>
+    <string name="eggs_name">eggs</string>
+    <string name="water_name">water</string>
+    <string name="blueberry_name">blueberry</string>
+    <string name="fish_name">fish</string>
+    <string name="meat_name">meat</string>
+    <string name="salt_name">salt</string>
+    <string name="flour_name">flour</string>
+    <string name="bread_name">bread</string>
+    <string name="cinnamon_name">cinnamon</string>
+    <string name="strawberry_name">strawberry</string>
+    <!--Ingredients-->
+
 </resources>

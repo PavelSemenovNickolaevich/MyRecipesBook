@@ -14,6 +14,9 @@
     <!--Home 1 view page-->
 
     <!--Recipe View 1-->
+    <string name="ingredients_title_header">Ингредиенты</string>
+    <string name="time_to_cook">10 мин</string>
+    <string name="calories">50 калорий</string>
     <string name="ingredients_title">Ингредиенты</string>
     <string name="recipes_steps_title">Пошаговый рецепт</string>
     <string name="first_step_text">Духовку разогреть до 200°. Палочку ванили разрезать вдоль пополам и ножом соскребсти семена из обеих образованных половинок.</string>
@@ -26,9 +29,55 @@
 
     <!--General views elements-->
     <string name="list_of_popular_1_title">Французские тосты с клубникой</string>
+    <string name="list_of_popular_2_title">Тост с корицей и сахаром</string>
     <string name="list_of_recommended_1_title">Черничные маффины</string>
     <string name="list_of_recommended_2_title">Лосось в глазури</string>
     <string name="breakfast_title">Завтрак</string>
+    <string name="name_hint">Имя</string>
+    <string name="password_hint">Пароль</string>
+    <string name="email_hint">Email</string>
+    <string name="general_title_appname">Daily Recipe</string>
+    <string name="enter_title">Войти</string>
+    <string name="registration_text">Регистрация</string>
     <!--General views elements-->
+
+    <!--Welcome view-->
+    <string name="enter_welcome_btn">Вход</string>
+    <string name="daily_recipe_main_header_welcome">Daily Recipe</string>
+    <string name="daily_recipe_second_header_welcome">Cooking Done The Easy Way</string>
+    <!--Welcome view-->
+
+    <!--Login view-->
+    <string name="forget_password_btn">Забыли пароль?</string>
+    <string name="enter_btn_login">Войти</string>
+    <string name="question_login">У вас нет аккаунта?</string>
+    <!--Login view-->
+
+    <!--Registration view-->
+    <string name="question_registration_text">Already registered?</string>
+    <string name="sign_in_btn">Sign in.</string>
+    <!--Registration view-->
+
+
+    <!--Error message-->
+    <string name="wrong_password">Пароль должен сожержать не менее 6 символов!</string>
+    <string name="wrong_email">Email должен быть не менее 5 символов и содержать @ !</string>
+    <string name="wrong_name">Имя должно содердать не менее 3-х сивмволов!</string>
+    <!--Error message-->
+
+    <!--Ingredients-->
+    <string name="sugar_name">Cахар</string>
+    <string name="butter_name">Масло</string>
+    <string name="eggs_name">Яйца</string>
+    <string name="water_name">Вода</string>
+    <string name="blueberry_name">Голубика</string>
+    <string name="fish_name">Рыба</string>
+    <string name="meat_name">Мясо</string>
+    <string name="salt_name">соль</string>
+    <string name="flour_name">Мука</string>
+    <string name="bread_name">хлеб</string>
+    <string name="cinnamon_name">Корица</string>
+    <string name="strawberry_name">Клубника</string>
+    <!--Ingredients-->
 
 </resources>

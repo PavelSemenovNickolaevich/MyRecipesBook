@@ -1,18 +1,223 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <TextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Hello World!"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageButton
+        android:id="@+id/menu_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/menu" />
+
+    <ImageButton
+        android:id="@+id/ring_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/ring" />
+
+    <TextView
+        android:id="@+id/greetings_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/menu_btn"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/greetings_user_text"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/what_will_you_cook_today_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/greetings_user"
+        android:layout_marginLeft="24dp"
+        android:text="@string/what_will_you_cook_today_header"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        android:textStyle="bold" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/search_layout"
+        android:layout_width="334dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/what_will_you_cook_today_header"
+        android:layout_marginTop="24dp"
+        app:startIconDrawable="@drawable/search">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/search_input_text"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="30dp"
+            android:background="@color/gray"
+            android:hint="@string/search_field_placeholder"
+            android:maxLines="1"
+            android:textSize="15sp"
+            app:hintTextColor="@color/gray" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="57dp"
+        android:layout_below="@id/what_will_you_cook_today_header"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15dp"
+        android:src="@drawable/filter" />
+
+    <TextView
+        android:id="@+id/popular_recipe_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_layout"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/popular_recipes_title"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <Button
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search_layout"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@id/popular_recipe_title"
+        android:text="@string/more_title"
+        android:textAllCaps="false"
+        android:textColor="@color/orange"
+        android:textSize="15sp" />
+
+    <FrameLayout
+        android:id="@+id/frame_layout_main_1"
+        android:layout_width="170dp"
+        android:layout_height="180dp"
+        android:layout_below="@id/popular_recipe_title"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="100dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/rect" />
+
+        <ImageButton
+            android:id="@+id/recipe_1_btn"
+            android:layout_width="104dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:background="@color/gray"
+            android:scaleType="fitCenter"
+            android:src="@drawable/french_toast_with_strawsberry" />
+
+        <TextView
+            android:id="@+id/type_of_meals_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="90dp"
+            android:text="@string/breakfast_title"
+            android:textColor="@color/blue"
+            android:textSize="6sp" />
+
+        <TextView
+            android:id="@+id/title_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="100dp"
+            android:text="@string/list_of_popular_1_title"
+            android:textColor="@color/black"
+            android:textSize="10sp" />
+
+        <RatingBar
+            android:id="@+id/ratingBar_1"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="125dp"
+            android:progressTint="@color/orange"
+            android:rating="5"
+            android:scaleX="0.5"
+            android:scaleY="0.5" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frame_layout_main_2"
+        android:layout_width="170dp"
+        android:layout_height="180dp"
+        android:layout_below="@id/popular_recipe_title"
+        android:layout_marginStart="210dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="100dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/rect" />
+
+        <ImageButton
+            android:id="@+id/recipe_2_btn"
+            android:layout_width="104dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:background="@color/gray"
+            android:scaleType="fitCenter"
+            android:src="@drawable/toast_with_sugar_image" />
+
+        <TextView
+            android:id="@+id/type_of_meals_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="90dp"
+            android:text="@string/breakfast_title"
+            android:textColor="@color/blue"
+            android:textSize="6sp" />
+
+        <TextView
+            android:id="@+id/title_2"
+            android:layout_width="106dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="100dp"
+            android:text="@string/list_of_popular_2_title"
+            android:textColor="@color/black"
+            android:textSize="10sp" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="125dp"
+            android:progressTint="@color/orange"
+            android:rating="4"
+            android:scaleX="0.5"
+            android:scaleY="0.5" />
+
+    </FrameLayout>
+
+</RelativeLayout>
