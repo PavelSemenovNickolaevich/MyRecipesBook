@@ -20,7 +20,7 @@
         android:layout_marginTop="110dp"
         android:text="@string/general_title_appname"
         android:textColor="@color/white"
-        android:textSize="40sp" />
+        android:textSize="@dimen/textSize_40sp" />
 
     <TextView
         android:id="@+id/registration_title"
@@ -31,77 +31,108 @@
         android:layout_marginTop="80dp"
         android:text="@string/registration_text"
         android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:textSize="@dimen/textSize_20sp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/text_input_name_layout"
-        android:layout_width="match_parent"
+        style="@style/Widget.Design.TextInputLayout"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        app:startIconDrawable="@drawable/user_icon">
+        android:textColorHint="@color/dark_grey"
+        app:startIconDrawable="@drawable/person_xml"
+        app:startIconTint="@color/dark_grey">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/text_input_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/name_hint" />
+            android:backgroundTint="@color/dark_grey"
+            android:hint="@string/name_hint"
+            android:maxLength="15"
+            android:maxLines="1"
+            android:textColor="@color/white" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/text_input_email_layout"
-        android:layout_width="match_parent"
+        style="@style/Widget.Design.TextInputLayout"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_input_name_layout"
         android:layout_centerInParent="true"
-        app:startIconDrawable="@drawable/email">
+        android:textColorHint="@color/dark_grey"
+        app:startIconDrawable="@drawable/email_xml"
+        app:startIconTint="@color/dark_grey">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/text_input_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/email_hint" />
+            android:backgroundTint="@color/dark_grey"
+            android:hint="@string/email_hint"
+            android:maxLength="15"
+            android:maxLines="1"
+            android:textColor="@color/white" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/text_input_password_layout"
-        android:layout_width="match_parent"
+        style="@style/Widget.Design.TextInputLayout"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_input_email_layout"
         android:layout_centerInParent="true"
+        android:textColorHint="@color/dark_grey"
         app:endIconMode="password_toggle"
-        app:startIconDrawable="@drawable/password">
+        app:endIconTint="@color/dark_grey"
+        app:startIconDrawable="@drawable/password_lock"
+        app:startIconTint="@color/dark_grey">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/text_input_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/password_hint" />
+            android:backgroundTint="@color/dark_grey"
+            android:hint="@string/password_hint"
+            android:maxLength="15"
+            android:maxLines="1"
+            android:textColor="@color/white" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <FrameLayout
-        android:layout_width="315dp"
-        android:layout_height="55dp"
+    <Button
+        android:id="@+id/registrationBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="130dp">
+        android:layout_marginStart="@dimen/indentFromTheMarginStartLoginActivity_80"
+        android:layout_marginEnd="@dimen/indentFromTheMarginEndLoginActivity_80"
+        android:layout_marginBottom="@dimen/indentFromTheMarginBottomLoginActivity_110"
+        android:background="@drawable/buttonshape"
+        android:text="@string/registration_text"
+        android:textAllCaps="false" />
 
-        <ImageButton
-            android:id="@+id/registrationBtn"
-            android:layout_width="315dp"
-            android:layout_height="55dp"
-            android:src="@drawable/button_rectangle" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/registration_text"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-    </FrameLayout>
+    <!--    <Button-->
+    <!--        android:id="@+id/registrationBtn"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_alignParentStart="true"-->
+    <!--        android:layout_alignParentEnd="true"-->
+    <!--        android:layout_alignParentBottom="true"-->
+    <!--        android:layout_marginStart="80dp"-->
+    <!--        android:layout_marginEnd="80dp"-->
+    <!--        android:layout_marginBottom="120dp"-->
+    <!--        android:paddingTop="12dp"-->
+    <!--        android:paddingBottom="12dp"-->
+    <!--        android:layout_centerHorizontal="true"-->
+    <!--        android:backgroundTint="@color/orange"-->
+    <!--        android:text="Регистрация"-->
+    <!--        android:textAllCaps="false" />-->
 
     <TextView
         android:id="@+id/question_title"
@@ -112,7 +143,7 @@
         android:layout_marginBottom="13dp"
         android:text="@string/question_registration_text"
         android:textColor="@color/dark_grey"
-        android:textSize="16sp" />
+        android:textSize="@dimen/textSize_16sp" />
 
     <Button
         android:id="@+id/sign_in_btn"
@@ -124,6 +155,6 @@
         android:text="@string/sign_in_btn"
         android:textAllCaps="false"
         android:textColor="@color/orange"
-        android:textSize="16sp" />
+        android:textSize="@dimen/textSize_16sp" />
 
 </RelativeLayout>

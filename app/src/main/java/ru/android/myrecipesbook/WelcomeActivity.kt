@@ -26,8 +26,8 @@ class WelcomeActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        if (v != null) {
-            when (v.id) {
+        v?.let {
+            when (it.id) {
                 R.id.registrationBtn -> registrationActivity.start(this)
                 R.id.loginBtn -> loginActivity.start(this)
             }

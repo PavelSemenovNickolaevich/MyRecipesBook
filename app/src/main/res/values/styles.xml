@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <style name="NotCapsButton" parent="Widget.AppCompat.Button">
         <item name="android:textAllCaps">false</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.MaterialComponents.Chip" parent="" tools:ignore="PrivateResource">
+        <item name="cornerSize">50%</item>
+    </style>
+    <style name="FiltersStyle" parent="Widget.AppCompat.SeekBar">
+        <item name="android:thumbTint">@color/orange</item>
+        <item name="android:progressTint">@color/orange</item>
+        <item name="android:max">100</item>
     </style>
 </resources>

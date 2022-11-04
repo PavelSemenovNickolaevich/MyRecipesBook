@@ -7,7 +7,6 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.Button
-import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
 
@@ -27,7 +26,7 @@ class RegistrationActivity : AppCompatActivity(), View.OnClickListener {
     private val mainActivity: MainActivity = MainActivity()
     private val loginActivity: LoginActivity = LoginActivity()
     val signInBtn: Button by lazy { findViewById(R.id.sign_in_btn) }
-    val registrationBtn: ImageButton by lazy { findViewById(R.id.registrationBtn) }
+    val registrationBtn: Button by lazy { findViewById(R.id.registrationBtn) }
     val userName: TextInputEditText by lazy { findViewById(R.id.text_input_name) }
     val email: TextInputEditText by lazy { findViewById(R.id.text_input_email) }
     val password: TextInputEditText by lazy { findViewById(R.id.text_input_password) }
@@ -48,8 +47,10 @@ class RegistrationActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             override fun afterTextChanged(p0: Editable?) {
-                if (userName.text!!.length < MIN_NAME_SYMBOLS)
-                    userName.error = resources.getString(R.string.wrong_name)
+                userName.text?.let {
+                    if (it.length < MIN_NAME_SYMBOLS)
+                        userName.error = resources.getString(R.string.wrong_name)
+                }
             }
         })
 
@@ -61,8 +62,10 @@ class RegistrationActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             override fun afterTextChanged(p0: Editable?) {
-                if (email.text!!.length < MIN_EMAIL_SYMBOLS || !email.text!!.contains("@"))
-                    email.error = resources.getString(R.string.wrong_email)
+                email.text?.let {
+                    if (it.length < MIN_EMAIL_SYMBOLS || !it.contains("@"))
+                        email.error = resources.getString(R.string.wrong_email)
+                }
             }
         })
 
@@ -74,20 +77,20 @@ class RegistrationActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             override fun afterTextChanged(p0: Editable?) {
-                if (password.text!!.length < MIN_PASSWORD_SYMBOLS)
-                    password.error = resources.getString(R.string.wrong_password)
-
+                password.text?.let {
+                    if (it.length < MIN_PASSWORD_SYMBOLS)
+                        password.error = resources.getString(R.string.wrong_password)
+                }
             }
         })
     }
 
     override fun onClick(v: View?) {
-        if (v != null) {
-            when (v.id) {
+        v?.let {
+            when (it.id) {
                 R.id.registrationBtn -> mainActivity.start(this)
                 R.id.sign_in_btn -> loginActivity.start(this)
             }
         }
     }
-
 }

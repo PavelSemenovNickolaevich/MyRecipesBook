@@ -57,7 +57,8 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/search_input_text"
-            android:layout_width="301dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="310dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
             android:layout_marginRight="30dp"
@@ -71,10 +72,10 @@
 
     <ImageButton
         android:layout_width="wrap_content"
-        android:layout_height="59dp"
+        android:layout_height="57dp"
         android:layout_below="@id/what_will_you_cook_today_header"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="15dp"
         android:src="@drawable/filter" />
 

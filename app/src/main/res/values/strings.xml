@@ -63,7 +63,21 @@
     <string name="wrong_password">Пароль должен сожержать не менее 6 символов!</string>
     <string name="wrong_email">Email должен быть не менее 5 символов и содержать @ !</string>
     <string name="wrong_name">Имя должно содердать не менее 3-х сивмволов!</string>
-
     <!--Error message-->
+
+    <!--Ingredients-->
+    <string name="sugar_name">Cахар</string>
+    <string name="butter_name">Масло</string>
+    <string name="eggs_name">Яйца</string>
+    <string name="water_name">Вода</string>
+    <string name="blueberry_name">Голубика</string>
+    <string name="fish_name">Рыба</string>
+    <string name="meat_name">Мясо</string>
+    <string name="salt_name">соль</string>
+    <string name="flour_name">Мука</string>
+    <string name="bread_name">хлеб</string>
+    <string name="cinnamon_name">Корица</string>
+    <string name="strawberry_name">Клубника</string>
+    <!--Ingredients-->
 
 </resources>
