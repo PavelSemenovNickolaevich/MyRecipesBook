@@ -20,11 +20,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         Timber.d("This is log for onCreate")
 
-        var recipeBtn:ImageButton = findViewById(R.id.recipe_1_btn)
+//        var recipeBtn:ImageButton = findViewById(R.id.recipe_1_btn)
 
-        recipeBtn.setOnClickListener{
-            val intent = Intent(this, ReceipeDetailsActivity::class.java )
-            startActivity(intent)
-        }
+//        recipeBtn.setOnClickListener{
+//            val intent = Intent(this, ReceipeDetailsActivity::class.java )
+//            startActivity(intent)
+//        }
     }
 }

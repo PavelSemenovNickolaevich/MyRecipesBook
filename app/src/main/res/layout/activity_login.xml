@@ -85,13 +85,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_input_password"
+        android:layout_marginTop="10dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="260dp"
         android:maxLines="1"
         android:text="@string/forget_password_btn"
         android:textAllCaps="false"
         android:textColor="@color/blue"
-        android:textSize="@dimen/textSize_13sp" />
+        android:textSize="@dimen/textSize_12sp" />
+
 
     <Button
         android:id="@+id/registrationBtn"
@@ -103,31 +105,10 @@
         android:layout_marginStart="@dimen/indentFromTheMarginStartLoginActivity_80"
         android:layout_marginEnd="@dimen/indentFromTheMarginEndLoginActivity_80"
         android:layout_marginBottom="@dimen/indentFromTheMarginBottomLoginActivity_110"
-        android:background="@drawable/buttonshape"
+        android:backgroundTint="@color/orange"
         android:text="@string/enter_title"
+        app:cornerRadius="20dp"
         android:textAllCaps="false" />
-
-    <!--    <FrameLayout-->
-    <!--        android:layout_width="315dp"-->
-    <!--        android:layout_height="55dp"-->
-    <!--        android:layout_alignParentBottom="true"-->
-    <!--        android:layout_centerHorizontal="true"-->
-    <!--        android:layout_marginBottom="130dp">-->
-
-    <!--        <ImageButton-->
-    <!--            android:id="@+id/registrationBtn"-->
-    <!--            android:layout_width="315dp"-->
-    <!--            android:layout_height="55dp"-->
-    <!--            android:src="@drawable/button_rectangle" />-->
-
-    <!--        <TextView-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_gravity="center"-->
-    <!--            android:text="@string/enter_btn_login"-->
-    <!--            android:textColor="@color/white"-->
-    <!--            android:textSize="20sp" />-->
-    <!--    </FrameLayout>-->
 
     <TextView
         android:id="@+id/question_title_login"

@@ -43,4 +43,5 @@ dependencies {
     implementation libraries.junit
     implementation libraries.junitExt
     implementation libraries.supportAnnotations
+    implementation 'androidx.cardview:cardview:1.0.0'
 }

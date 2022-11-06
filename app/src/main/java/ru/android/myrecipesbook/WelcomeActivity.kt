@@ -18,7 +18,7 @@ class WelcomeActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_welcome)
         Timber.d("This is log for on Create")
 
-        val registrationBtn = findViewById<ImageButton>(R.id.registrationBtn)
+        val registrationBtn = findViewById<Button>(R.id.registrationBtn)
         val loginBtn = findViewById<Button>(R.id.loginBtn)
 
         registrationBtn.setOnClickListener(this)
