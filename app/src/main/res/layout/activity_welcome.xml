@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
-        android:src="@drawable/frying_pan_empty_assorted_spices" />
+        android:src="@drawable/frying_pan_empty_assorted_spices_webp" />
 
     <TextView
         android:id="@+id/daily_recipe"
@@ -34,39 +35,16 @@
         android:id="@+id/registrationBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/loginBtn"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="@dimen/indentFromTheMarginStartLoginActivity_80"
         android:layout_marginEnd="@dimen/indentFromTheMarginEndLoginActivity_80"
         android:layout_marginBottom="@dimen/indentFromTheMarginBottomLoginActivity_110"
-        android:background="@drawable/buttonshape"
+        android:backgroundTint="@color/orange"
         android:text="@string/registration_text"
+        app:cornerRadius="20dp"
         android:textAllCaps="false" />
-
-
-<!--    <FrameLayout-->
-    <!--        android:layout_width="315dp"-->
-    <!--        android:layout_height="55dp"-->
-    <!--        android:layout_alignParentBottom="true"-->
-    <!--        android:layout_centerHorizontal="true"-->
-    <!--        android:layout_marginBottom="100dp">-->
-
-    <!--        <ImageButton-->
-    <!--            android:id="@+id/registrationBtn"-->
-    <!--            android:layout_width="315dp"-->
-    <!--            android:layout_height="55dp"-->
-    <!--            android:src="@drawable/button_rectangle" />-->
-
-    <!--        <TextView-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_gravity="center"-->
-    <!--            android:text="@string/registration_text"-->
-    <!--            android:textColor="@color/white"-->
-    <!--            android:textSize="20sp" />-->
-    <!--    </FrameLayout>-->
 
     <Button
         android:id="@+id/loginBtn"

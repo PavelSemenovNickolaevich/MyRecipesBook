@@ -30,6 +30,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    viewBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -42,5 +45,6 @@ dependencies {
     implementation libraries.espressoCore
     implementation libraries.junit
     implementation libraries.junitExt
-    implementation libraries.supportAnnotations
+    implementation libraries.annotation
+    implementation libraries.cardview
 }

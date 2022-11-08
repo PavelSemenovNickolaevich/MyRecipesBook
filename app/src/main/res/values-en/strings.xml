@@ -2,11 +2,11 @@
 
     <!--Home 1 view page-->
     <string name="app_name">MyRecipesBook</string>
-<!--    <string name="what_will_you_cook_today_header">Что будете готовить сегодня?</string>-->
-<!--    <string name="greetings_user_text">Здравствуйте, Анастасия</string>-->
-    <string name="popular_recipes_title">Popular recipes</string>
-    <string name="search_field_placeholder">Begin search</string>
-    <string name="recommendations_title">Recommendations</string>
+    <string name="what_will_you_cook_today_header">Что будете готовить сегодня?</string>
+    <string name="greetings_user_text">Здравствуйте, Анастасия</string>
+    <string name="popular_recipes_title">Популярные рецепты</string>
+    <string name="search_field_placeholder">Начните поиск</string>
+    <string name="recommendations_title">Рекомендуем</string>
     <string name="more_title">More…</string>
     <string name="search_title">Search</string>
     <string name="my_recipes_title">My recipes</string>
@@ -14,35 +14,56 @@
     <!--Home 1 view page-->
 
     <!--Recipe View 1-->
-    <string name="ingredients_title">Ingredients</string>
-    <string name="recipes_steps_title">Step recipes</string>
-<!--    <string name="first_step_text">Духовку разогреть до 200°. Палочку ванили разрезать вдоль пополам и ножом соскребсти семена из обеих образованных половинок.</string>-->
-<!--    <string name="second_step_text">Молоко,ваниль и 40 г сах.пудры довести до кипения,снять с огня,накрыть крышкой и дать настояться 20 мин.</string>-->
-<!--    <string name="third_step_text">Отдельно взбить яйцо с 10 г сах.пудры. Каждый кусочек обмакать в молоке,затем в яйце. Поставить в духовку на 10 мин,затем перевернуть каждый кусочек и запекать еще 10 мин.</string>-->
-<!--    <string name="fourth_step_text">Перед подачей посыпать корицей и сах.пудрой,сверху положить порезанную клубнику.</string>-->
-    <string name="bon_appetit_text">Bon appetit</string>
-    <string name="back_button_text">Return</string>
+    <string name="ingredients_title_header">Ingredients</string>
+    <string name="time_to_cook">10 min</string>
+    <string name="calories">50 калорий</string>
+    <string name="ingredients_title">Ингредиенты</string>
+    <string name="recipes_steps_title">Пошаговый рецепт</string>
+    <string name="first_step_text">Духовку разогреть до 200°. Палочку ванили разрезать вдоль пополам и ножом соскребсти семена из обеих образованных половинок.</string>
+    <string name="second_step_text">Молоко,ваниль и 40 г сах.пудры довести до кипения,снять с огня,накрыть крышкой и дать настояться 20 мин.</string>
+    <string name="third_step_text">Отдельно взбить яйцо с 10 г сах.пудры. Каждый кусочек обмакать в молоке,затем в яйце. Поставить в духовку на 10 мин,затем перевернуть каждый кусочек и запекать еще 10 мин.</string>
+    <string name="fourth_step_text">Перед подачей посыпать корицей и сах.пудрой,сверху положить порезанную клубнику.</string>
+    <string name="bon_appetit_text">Приятного аппетита</string>
+    <string name="back_button_text">Вернуться</string>
     <!--Recipe View 1-->
 
     <!--General views elements-->
-<!--    <string name="list_of_popular_1_title">Французские тосты с клубникой</string>-->
-<!--    <string name="list_of_recommended_1_title">Черничные маффины</string>-->
-<!--    <string name="list_of_recommended_2_title">Лосось в глазури</string>-->
-    <string name="breakfast_title">Breakfast</string>
+    <string name="list_of_popular_1_title">Французские тосты с клубникой</string>
+    <string name="list_of_popular_2_title">Тост с корицей и сахаром</string>
+    <string name="list_of_recommended_1_title">Черничные маффины</string>
+    <string name="list_of_recommended_2_title">Лосось в глазури</string>
+    <string name="breakfast_title">Завтрак</string>
+    <string name="lunch_title">Обед</string>
+    <string name="name_hint">Имя</string>
+    <string name="password_hint">Пароль</string>
+    <string name="email_hint">Email</string>
+    <string name="general_title_appname">Daily Recipe</string>
+    <string name="enter_title">Войти</string>
+    <string name="registration_text">Регистрация</string>
     <!--General views elements-->
 
     <!--Welcome view-->
-    <string name="registration_welcome">Registration</string>
-    <string name="enter">Sign in</string>
-    <string name="daily_recipe_main_header">Daily Recipe</string>
-    <string name="daily_recipe_second_header">Cooking Done The Easy Way</string>
+    <string name="enter_welcome_btn">Вход</string>
+    <string name="daily_recipe_main_header_welcome">Daily Recipe</string>
+    <string name="daily_recipe_second_header_welcome">Cooking Done The Easy Way</string>
     <!--Welcome view-->
+
+    <!--Login view-->
+    <string name="forget_password_btn">Забыли пароль?</string>
+    <string name="enter_btn_login">LogIn</string>
+    <string name="question_login">У вас нет аккаунта?</string>
+    <!--Login view-->
+
+    <!--Registration view-->
+    <string name="question_registration_text">Already registered?</string>
+    <string name="sign_in_btn">Sign in.</string>
+    <!--Registration view-->
 
 
     <!--Error message-->
-    <string name="wrong_password">Password must contain at least 6 characters!</string>
-    <string name="wrong_email">Email must be at least 5 characters long and contain @!</string>
-    <string name="wrong_name">The name must contain at least 3 characters!</string>
+    <string name="wrong_password">Пароль должен сожержать не менее 6 символов!</string>
+    <string name="wrong_email">Email должен быть не менее 5 символов и содержать @ !</string>
+    <string name="wrong_name">Имя должно содердать не менее 3-х сивмволов!</string>
     <!--Error message-->
 
     <!--Ingredients-->
@@ -50,7 +71,7 @@
     <string name="butter_name">butter</string>
     <string name="eggs_name">eggs</string>
     <string name="water_name">water</string>
-    <string name="blueberry_name">blueberry</string>
+    <string name="blueberry_name">Голубика</string>
     <string name="fish_name">fish</string>
     <string name="meat_name">meat</string>
     <string name="salt_name">salt</string>

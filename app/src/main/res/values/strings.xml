@@ -33,6 +33,7 @@
     <string name="list_of_recommended_1_title">Черничные маффины</string>
     <string name="list_of_recommended_2_title">Лосось в глазури</string>
     <string name="breakfast_title">Завтрак</string>
+    <string name="lunch_title">Обед</string>
     <string name="name_hint">Имя</string>
     <string name="password_hint">Пароль</string>
     <string name="email_hint">Email</string>

@@ -113,26 +113,10 @@
         android:layout_marginStart="@dimen/indentFromTheMarginStartLoginActivity_80"
         android:layout_marginEnd="@dimen/indentFromTheMarginEndLoginActivity_80"
         android:layout_marginBottom="@dimen/indentFromTheMarginBottomLoginActivity_110"
-        android:background="@drawable/buttonshape"
+        android:backgroundTint="@color/orange"
         android:text="@string/registration_text"
+        app:cornerRadius="20dp"
         android:textAllCaps="false" />
-
-    <!--    <Button-->
-    <!--        android:id="@+id/registrationBtn"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_alignParentStart="true"-->
-    <!--        android:layout_alignParentEnd="true"-->
-    <!--        android:layout_alignParentBottom="true"-->
-    <!--        android:layout_marginStart="80dp"-->
-    <!--        android:layout_marginEnd="80dp"-->
-    <!--        android:layout_marginBottom="120dp"-->
-    <!--        android:paddingTop="12dp"-->
-    <!--        android:paddingBottom="12dp"-->
-    <!--        android:layout_centerHorizontal="true"-->
-    <!--        android:backgroundTint="@color/orange"-->
-    <!--        android:text="Регистрация"-->
-    <!--        android:textAllCaps="false" />-->
 
     <TextView
         android:id="@+id/question_title"
