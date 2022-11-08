@@ -10,8 +10,8 @@
         android:id="@+id/menu_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/marginStartMainActivity_16dp"
-        android:layout_marginTop="@dimen/marginTopMainActivity_16dp"
+        android:layout_marginStart="@dimen/margin_normal_16dp"
+        android:layout_marginTop="@dimen/margin_normal_16dp"
         android:backgroundTint="@color/white"
         android:src="@drawable/menu" />
 
@@ -20,8 +20,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="@dimen/marginTopMainActivity_16dp"
-        android:layout_marginEnd="@dimen/marginEndMainActivity_16dp"
+        android:layout_marginTop="@dimen/margin_normal_16dp"
+        android:layout_marginEnd="@dimen/margin_normal_16dp"
         android:backgroundTint="@color/white"
         android:src="@drawable/ring" />
 
@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/menu_btn"
-        android:layout_marginStart="@dimen/marginStartMainActivity_24dp"
+        android:layout_marginStart="@dimen/margin_medium_variant_one_24dp"
         android:layout_marginTop="@dimen/marginStartMainActivity_25dp"
         android:text="@string/greetings_user_text"
         android:textSize="@dimen/textSize_12sp" />
@@ -40,7 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/greetings_user"
-        android:layout_marginStart="@dimen/marginStartMainActivity_24dp"
+        android:layout_marginStart="@dimen/margin_medium_variant_one_24dp"
         android:text="@string/what_will_you_cook_today_header"
         android:textColor="@color/black"
         android:textSize="@dimen/textSize_24sp"
@@ -53,7 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/what_will_you_cook_today_header"
-        android:layout_marginStart="@dimen/marginStartMainActivity_24dp"
+        android:layout_marginStart="@dimen/margin_medium_variant_one_24dp"
         app:hintEnabled="false"
         app:hintTextColor="@color/dark_grey"
         app:startIconDrawable="@drawable/search_xml"
@@ -79,8 +79,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/what_will_you_cook_today_header"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="@dimen/marginTopMainActivity_5dp"
-        android:layout_marginEnd="@dimen/marginEndMainActivity_30dp"
+        android:layout_marginTop="@dimen/margin_mini_5dp"
+        android:layout_marginEnd="@dimen/margin_medium_variant_two_30dp"
         android:background="@drawable/edit_round"
         android:backgroundTint="@color/gray"
         android:foregroundGravity="clip_horizontal"
@@ -88,14 +88,13 @@
         android:scaleY="1.5"
         android:src="@drawable/filter_btn" />
 
-
     <TextView
         android:id="@+id/popular_recipe_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/search_layout"
-        android:layout_marginStart="@dimen/marginStartMainActivity_24dp"
-        android:layout_marginTop="@dimen/marginTopMainActivity_24dp"
+        android:layout_marginStart="@dimen/margin_medium_variant_one_24dp"
+        android:layout_marginTop="@dimen/margin_medium_variant_one_24dp"
         android:text="@string/popular_recipes_title"
         android:textColor="@color/black"
         android:textSize="@dimen/textSize_20sp"
@@ -107,284 +106,426 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/search_layout"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="@dimen/marginTopMainActivity_15dp"
-        android:layout_marginEnd="@dimen/marginEndMainActivity_15dp"
+        android:layout_marginTop="@dimen/margin_normal_16dp"
+        android:layout_marginEnd="@dimen/margin_normal_16dp"
         android:text="@string/more_title"
         android:textAllCaps="false"
         android:textColor="@color/orange"
         android:textSize="@dimen/textSize_15sp" />
 
-    <LinearLayout
-        android:id="@+id/popular_cards"
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/popular_recipe_title"
-        android:layout_marginStart="@dimen/marginStartMainActivity_24dp"
-        android:layout_marginTop="@dimen/marginTopMainActivity_10dp"
-        android:orientation="horizontal">
+        android:layout_below="@+id/popular_recipe_title">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="147dp"
+        <LinearLayout
+            android:id="@+id/popular_cards"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/gray"
-            app:cardCornerRadius="@dimen/cardCornerRadius_10dp">
+            android:paddingHorizontal="24dp"
+            android:layout_below="@+id/popular_recipe_title"
+            android:layout_marginTop="@dimen/marginTopMainActivity_10dp"
+            android:orientation="horizontal">
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+            <androidx.cardview.widget.CardView
+                android:layout_width="147dp"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/gray"
+                app:cardCornerRadius="@dimen/cardCornerRadius_10dp">
 
-                <ImageView
-                    android:id="@+id/recipe_1"
-                    android:layout_width="144dp"
-                    android:layout_height="86dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/french_toast_with_strawsberry" />
-
-                <TextView
-                    android:id="@+id/tv_type_of_meals_tv"
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/recipe_1"
-                    android:layout_marginStart="@dimen/marginStartMainActivity_5dp"
-                    android:text="@string/breakfast_title"
-                    android:textColor="@color/blue"
-                    android:textSize="@dimen/textSize_12sp" />
+                    android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/title_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_type_of_meals_tv"
-                    android:layout_marginStart="@dimen/marginStartMainActivity_5dp"
-                    android:maxWidth="@dimen/maxWidthMainActivity_120dp"
-                    android:text="@string/list_of_popular_1_title"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/textSize_12sp" />
+                    <ImageView
+                        android:id="@+id/recipe_1"
+                        android:layout_width="144dp"
+                        android:layout_height="86dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/french_toast_with_strawsberry" />
 
-                <LinearLayout
-                    android:id="@+id/rating_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/title_1">
-
-                    <RatingBar
-                        android:id="@+id/ratingBar_1"
-                        style="@style/Widget.AppCompat.RatingBar.Small"
+                    <TextView
+                        android:id="@+id/tv_type_of_meals_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/marginStartMainActivity_5dp"
-                        android:progressTint="@color/orange"
-                        android:rating="5" />
-
-                    <androidx.appcompat.widget.AppCompatCheckBox
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="@dimen/marginStartMainActivity_30dp"
-                        android:button="@drawable/like" />
-
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/calories_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/rating_1"
-                    android:layout_marginStart="@dimen/marginStartMainActivity_5dp"
-                    android:text="120 калорий"
-                    android:textColor="@color/orange"
-                    android:textSize="@dimen/textSize_10sp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/calories_1"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/timer_1"
-                        android:layout_width="15dp"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
-                        android:src="@drawable/time" />
+                        android:layout_below="@id/recipe_1"
+                        android:layout_marginStart="@dimen/margin_mini_5dp"
+                        android:text="@string/breakfast_title"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/textSize_12sp" />
 
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
-                        android:gravity="center"
-                        android:text="10 мин"
-                        android:textColor="@color/dark_grey"
-                        android:textSize="@dimen/textSize_10sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/calories_1"
-                    android:layout_alignParentEnd="true"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/meal_1"
-                        android:layout_width="15dp"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
-                        android:src="@drawable/service_desk" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
-                        android:layout_marginEnd="@dimen/marginStartMainActivity_3dp"
-                        android:gravity="center"
-                        android:text="1 порция"
-                        android:textColor="@color/dark_grey"
-                        android:textSize="@dimen/textSize_10sp" />
-                </LinearLayout>
-
-            </RelativeLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="147dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/marginStartMainActivity_50dp"
-            app:cardBackgroundColor="@color/gray"
-            app:cardCornerRadius="@dimen/cardCornerRadius_10dp">
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/recipe_2"
-                    android:layout_width="144dp"
-                    android:layout_height="86dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/toast_with_sugar_image" />
-
-                <TextView
-                    android:id="@+id/type_of_meals_recipe_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/recipe_2"
-                    android:layout_marginStart="@dimen/marginStartMainActivity_5dp"
-                    android:text="@string/breakfast_title"
-                    android:textColor="@color/blue"
-                    android:textSize="@dimen/textSize_12sp" />
-
-                <TextView
-                    android:id="@+id/title_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/type_of_meals_recipe_2"
-                    android:layout_marginStart="@dimen/marginStartMainActivity_5dp"
-                    android:maxWidth="120dp"
-                    android:text="@string/list_of_popular_2_title"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/textSize_12sp" />
-
-                <LinearLayout
-                    android:id="@+id/rating_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/title_2">
-
-                    <RatingBar
-                        android:id="@+id/ratingBar_2"
-                        style="@style/Widget.AppCompat.RatingBar.Small"
+                        android:id="@+id/title_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/marginStartMainActivity_5dp"
-                        android:progressTint="@color/orange"
-                        android:rating="4" />
+                        android:layout_below="@id/tv_type_of_meals_tv"
+                        android:layout_marginStart="@dimen/margin_mini_5dp"
+                        android:maxWidth="@dimen/maxWidthMainActivity_120dp"
+                        android:text="@string/list_of_popular_1_title"
+                        android:maxLines="2"
+                        android:ellipsize="end"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textSize_12sp" />
 
-                    <androidx.appcompat.widget.AppCompatCheckBox
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="@dimen/marginStartMainActivity_30dp"
-                        android:button="@drawable/like_second_variant" />
+                    <LinearLayout
+                        android:id="@+id/rating_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/title_1">
 
-                </LinearLayout>
+                        <RatingBar
+                            android:id="@+id/ratingBar_1"
+                            style="@style/Widget.AppCompat.RatingBar.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_mini_5dp"
+                            android:progressTint="@color/orange"
+                            android:rating="5" />
 
-                <TextView
-                    android:id="@+id/calories_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/rating_2"
-                    android:layout_marginStart="@dimen/marginStartMainActivity_5dp"
-                    android:text="135 калорий"
-                    android:textColor="@color/orange"
-                    android:textSize="@dimen/textSize_10sp" />
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="true"
+                            android:checked="false"
+                            android:layout_marginStart="@dimen/margin_medium_variant_two_30dp"
+                            android:button="@drawable/checkbox_states"
+                            android:focusable="true" />
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/calories_2"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/timer_2"
-                        android:layout_width="15dp"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
-                        android:src="@drawable/time" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
-                        android:gravity="center"
-                        android:text="15 мин"
-                        android:textColor="@color/dark_grey"
-                        android:textSize="@dimen/textSize_10sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/calories_2"
-                    android:layout_alignParentEnd="true"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/meal_2"
-                        android:layout_width="15dp"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
-                        android:src="@drawable/service_desk" />
+                    </LinearLayout>
 
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
-                        android:layout_marginEnd="@dimen/marginStartMainActivity_3dp"
-                        android:gravity="center"
-                        android:text="1 порция"
-                        android:textColor="@color/dark_grey"
+                        android:id="@+id/calories_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rating_1"
+                        android:layout_marginStart="@dimen/margin_mini_5dp"
+                        android:text="120 калорий"
+                        android:textColor="@color/orange"
                         android:textSize="@dimen/textSize_10sp" />
-                </LinearLayout>
 
-            </RelativeLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/calories_1"
+                        android:orientation="horizontal">
 
-        </androidx.cardview.widget.CardView>
+                        <ImageView
+                            android:id="@+id/timer_1"
+                            android:layout_width="15dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
+                            android:src="@drawable/time" />
 
-    </LinearLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
+                            android:gravity="center"
+                            android:text="10 мин"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/textSize_10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/calories_1"
+                        android:layout_alignParentEnd="true"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/meal_1"
+                            android:layout_width="15dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
+                            android:src="@drawable/service_desk" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="@dimen/marginStartMainActivity_3dp"
+                            android:gravity="center"
+                            android:text="1 порция"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/textSize_10sp" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="147dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/marginStartMainActivity_50dp"
+                app:cardBackgroundColor="@color/gray"
+                app:cardCornerRadius="@dimen/cardCornerRadius_10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/recipe_2"
+                        android:layout_width="144dp"
+                        android:layout_height="86dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/toast_with_sugar_image" />
+
+                    <TextView
+                        android:id="@+id/type_of_meals_recipe_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/recipe_2"
+                        android:layout_marginStart="@dimen/margin_mini_5dp"
+                        android:text="@string/breakfast_title"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/textSize_12sp" />
+
+                    <TextView
+                        android:id="@+id/title_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/type_of_meals_recipe_2"
+                        android:maxLines="2"
+                        android:ellipsize="end"
+                        android:layout_marginStart="@dimen/margin_mini_5dp"
+                        android:maxWidth="120dp"
+                        android:text="@string/list_of_popular_2_title"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textSize_12sp" />
+
+                    <LinearLayout
+                        android:id="@+id/rating_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/title_2">
+
+                        <RatingBar
+                            android:id="@+id/ratingBar_2"
+                            style="@style/Widget.AppCompat.RatingBar.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_mini_5dp"
+                            android:progressTint="@color/orange"
+                            android:rating="4" />
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="true"
+                            android:checked="true"
+                            android:layout_marginStart="@dimen/margin_medium_variant_two_30dp"
+                            android:button="@drawable/checkbox_states"
+                            android:focusable="true" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/calories_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rating_2"
+                        android:layout_marginStart="@dimen/margin_mini_5dp"
+                        android:text="135 калорий"
+                        android:textColor="@color/orange"
+                        android:textSize="@dimen/textSize_10sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/calories_2"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/timer_2"
+                            android:layout_width="15dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
+                            android:src="@drawable/time" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
+                            android:gravity="center"
+                            android:text="15 мин"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/textSize_10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/calories_2"
+                        android:layout_alignParentEnd="true"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/meal_2"
+                            android:layout_width="15dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
+                            android:src="@drawable/service_desk" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="@dimen/marginStartMainActivity_3dp"
+                            android:gravity="center"
+                            android:text="1 порция"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/textSize_10sp" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="147dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/marginStartMainActivity_50dp"
+                app:cardBackgroundColor="@color/gray"
+                app:cardCornerRadius="@dimen/cardCornerRadius_10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/recipe_3"
+                        android:layout_width="144dp"
+                        android:layout_height="86dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/toast_with_sugar_image" />
+
+                    <TextView
+                        android:id="@+id/type_of_meals_recipe_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/recipe_3"
+                        android:layout_marginStart="@dimen/margin_mini_5dp"
+                        android:text="@string/breakfast_title"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/textSize_12sp" />
+
+                    <TextView
+                        android:id="@+id/title_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/type_of_meals_recipe_3"
+                        android:layout_marginStart="@dimen/margin_mini_5dp"
+                        android:maxWidth="120dp"
+                        android:text="@string/list_of_popular_2_title"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textSize_12sp" />
+
+                    <LinearLayout
+                        android:id="@+id/rating_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/title_3">
+
+                        <RatingBar
+                            android:id="@+id/ratingBar_3"
+                            style="@style/Widget.AppCompat.RatingBar.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_mini_5dp"
+                            android:progressTint="@color/orange"
+                            android:rating="4" />
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/margin_medium_variant_two_30dp"
+                            android:button="@drawable/like_second_variant" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/calories_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rating_3"
+                        android:layout_marginStart="@dimen/margin_mini_5dp"
+                        android:text="135 калорий"
+                        android:textColor="@color/orange"
+                        android:textSize="@dimen/textSize_10sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/calories_3"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/timer_3"
+                            android:layout_width="15dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
+                            android:src="@drawable/time" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
+                            android:gravity="center"
+                            android:text="15 мин"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/textSize_10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/calories_3"
+                        android:layout_alignParentEnd="true"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/meal_3"
+                            android:layout_width="15dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
+                            android:src="@drawable/service_desk" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
+                            android:layout_marginEnd="@dimen/marginStartMainActivity_3dp"
+                            android:gravity="center"
+                            android:text="1 порция"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/textSize_10sp" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
 
     <RelativeLayout
         android:id="@+id/recommend_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/popular_cards">
+        android:layout_below="@id/horizontalScrollView">
 
         <TextView
             android:id="@+id/recommend_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="@dimen/marginStartMainActivity_24dp"
-            android:layout_marginTop="@dimen/marginTopMainActivity_24dp"
+            android:layout_marginStart="@dimen/margin_medium_variant_one_24dp"
+            android:layout_marginTop="@dimen/margin_medium_variant_one_24dp"
             android:text="Рекомендуем"
             android:textColor="@color/black"
             android:textSize="@dimen/textSize_20sp"
@@ -395,8 +536,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="@dimen/marginTopMainActivity_15dp"
-            android:layout_marginEnd="@dimen/marginEndMainActivity_15dp"
+            android:layout_marginTop="@dimen/margin_normal_16dp"
+            android:layout_marginEnd="@dimen/margin_normal_16dp"
             android:text="@string/more_title"
             android:textAllCaps="false"
             android:textColor="@color/orange"
@@ -404,304 +545,613 @@
 
     </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/recommend_cards"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/recommend_header"
-        android:layout_marginStart="@dimen/marginStartMainActivity_24dp"
-        android:orientation="vertical">
+<!--    <ScrollView-->
+<!--        android:id="@+id/verticalScrollView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_below="@+id/recommend_header">-->
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/recommend_recipe_1"
+        <LinearLayout
+            android:id="@+id/recommend_cards"
             android:layout_width="wrap_content"
+            android:layout_below="@id/recommend_header"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/gray"
-            app:cardCornerRadius="10dp">
+            android:paddingVertical="10dp"
+            android:layout_marginStart="@dimen/margin_medium_variant_one_24dp"
+            android:orientation="vertical">
 
-            <RelativeLayout
+            <androidx.cardview.widget.CardView
+                android:id="@+id/recommend_recipe_1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/gray"
+                app:cardCornerRadius="10dp">
 
-
-                <ImageView
-                    android:id="@+id/rec_recipe_1"
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:scaleType="center"
-                    android:src="@drawable/blueberry_muffins" />
+                    android:layout_height="wrap_content">
 
-                <LinearLayout
-                    android:id="@+id/description_rec_dish_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="100dp"
-                    android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/type_of_meals"
+                    <ImageView
+                        android:id="@+id/rec_recipe_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/marginStartMainActivity_5dp"
-                        android:text="@string/breakfast_title"
-                        android:textColor="@color/blue"
-                        android:textSize="@dimen/textSize_10sp" />
-
-                    <TextView
-                        android:id="@+id/rec_title_dish_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/marginStartMainActivity_5dp"
-                        android:text="@string/list_of_recommended_1_title"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/textSize_12sp" />
+                        android:layout_centerVertical="true"
+                        android:scaleType="center"
+                        android:src="@drawable/blueberry_muffins" />
 
                     <LinearLayout
-                        android:id="@+id/rec_rating_1"
+                        android:id="@+id/description_rec_dish_1"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <RatingBar
-                            android:id="@+id/rec_ratingBar_1"
-                            style="@style/Widget.AppCompat.RatingBar.Small"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/marginStartMainActivity_5dp"
-                            android:layout_marginTop="@dimen/marginTopMainActivity_5dp"
-                            android:layout_marginEnd="@dimen/marginEndMainActivity_5dp"
-                            android:progressTint="@color/orange"
-                            android:rating="3"
-                            android:stepSize="0.1" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="100dp"
+                        android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginStart="@dimen/marginStartMainActivity_5dp"
-                            android:layout_marginTop="@dimen/marginTopMainActivity_5dp"
-                            android:text="120 калорий"
-                            android:textColor="@color/orange"
+                            android:id="@+id/type_of_meals"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_mini_5dp"
+                            android:text="@string/breakfast_title"
+                            android:textColor="@color/blue"
                             android:textSize="@dimen/textSize_10sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/rec_footer_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:id="@+id/rec_timer_1"
-                                android:layout_width="15dp"
-                                android:layout_height="30dp"
-                                android:layout_marginStart="@dimen/marginStartMainActivity_5dp"
-                                android:src="@drawable/time" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
-                                android:gravity="center"
-                                android:text="10 мин"
-                                android:textColor="@color/dark_grey"
-                                android:textSize="@dimen/textSize_10sp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/marginStartMainActivity_35dp"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:id="@+id/rec_meal_1"
-                                android:layout_width="15dp"
-                                android:layout_height="@dimen/marginStartMainActivity_30do"
-                                android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
-                                android:src="@drawable/service_desk" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
-                                android:gravity="center"
-                                android:text="1 порция"
-                                android:textColor="@color/dark_grey"
-                                android:textSize="@dimen/textSize_10sp" />
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toEndOf="@+id/description_rec_dish_1">
-
-                    <androidx.appcompat.widget.AppCompatCheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/marginStartMainActivity_40dp"
-                        android:button="@drawable/like"
-                        android:gravity="center" />
-                </LinearLayout>
-
-
-            </RelativeLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/recommend_recipe_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            app:cardBackgroundColor="@color/gray"
-            app:cardCornerRadius="@dimen/cardCornerRadius_10dp">
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/rec_recipe_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/fish_dish_1" />
-
-                <LinearLayout
-                    android:id="@+id/description_rec_dish_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="100dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/rec_type_of_meals_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/marginStartMainActivity_5dp"
-                        android:text="@string/lunch_title"
-                        android:textColor="@color/blue"
-                        android:textSize="@dimen/textSize_10sp" />
-
-                    <TextView
-                        android:id="@+id/rec_title_dish_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/marginStartMainActivity_5dp"
-                        android:text="@string/list_of_recommended_2_title"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/textSize_12sp" />
-
-                    <LinearLayout
-                        android:id="@+id/rec_rating_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <RatingBar
-                            android:id="@+id/rec_rating_bar_2"
-                            style="@style/Widget.AppCompat.RatingBar.Small"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/marginStartMainActivity_5dp"
-                            android:layout_marginTop="@dimen/marginTopMainActivity_5dp"
-                            android:layout_marginEnd="@dimen/marginEndMainActivity_5dp"
-                            android:progressTint="@color/orange"
-                            android:rating="5"
-                            android:stepSize="0.1" />
 
                         <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginStart="@dimen/marginStartMainActivity_5dp"
-                            android:layout_marginTop="@dimen/marginTopMainActivity_5dp"
-                            android:text="280 калорий"
-                            android:textColor="@color/orange"
-                            android:textSize="@dimen/textSize_10sp" />
+                            android:id="@+id/rec_title_dish_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_mini_5dp"
+                            android:text="@string/list_of_recommended_1_title"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/textSize_12sp" />
+
+                        <LinearLayout
+                            android:id="@+id/rec_rating_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <RatingBar
+                                android:id="@+id/rec_ratingBar_1"
+                                style="@style/Widget.AppCompat.RatingBar.Small"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/margin_mini_5dp"
+                                android:layout_marginTop="@dimen/margin_mini_5dp"
+                                android:layout_marginEnd="@dimen/margin_mini_5dp"
+                                android:progressTint="@color/orange"
+                                android:rating="3"
+                                android:stepSize="0.1" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="@dimen/margin_mini_5dp"
+                                android:layout_marginTop="@dimen/margin_mini_5dp"
+                                android:text="120 калорий"
+                                android:textColor="@color/orange"
+                                android:textSize="@dimen/textSize_10sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/rec_footer_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/rec_timer_1"
+                                    android:layout_width="15dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginStart="@dimen/margin_mini_5dp"
+                                    android:src="@drawable/time" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
+                                    android:gravity="center"
+                                    android:text="10 мин"
+                                    android:textColor="@color/dark_grey"
+                                    android:textSize="@dimen/textSize_10sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/marginStartMainActivity_35dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/rec_meal_1"
+                                    android:layout_width="15dp"
+                                    android:layout_height="@dimen/margin_medium_variant_two_30dp"
+                                    android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
+                                    android:src="@drawable/service_desk" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
+                                    android:gravity="center"
+                                    android:text="1 порция"
+                                    android:textColor="@color/dark_grey"
+                                    android:textSize="@dimen/textSize_10sp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/rec_footer_2"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/description_rec_dish_1">
 
-                        <LinearLayout
+                        <androidx.appcompat.widget.AppCompatCheckBox
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:layout_marginStart="@dimen/marginStartMainActivity_40dp"
+                            android:clickable="true"
+                            android:checked="true"
+                            android:button="@drawable/checkbox_states"
+                            android:gravity="center"
+                            android:focusable="true" />
+                    </LinearLayout>
 
-                            <ImageView
-                                android:id="@+id/rec_timer_2"
-                                android:layout_width="15dp"
-                                android:layout_height="30dp"
-                                android:layout_marginStart="@dimen/marginStartMainActivity_5dp"
-                                android:src="@drawable/time" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/recommend_recipe_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="@color/gray"
+                app:cardCornerRadius="@dimen/cardCornerRadius_10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/rec_recipe_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/fish_dish_1" />
+
+                    <LinearLayout
+                        android:id="@+id/description_rec_dish_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="100dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/rec_type_of_meals_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_mini_5dp"
+                            android:text="@string/lunch_title"
+                            android:textColor="@color/blue"
+                            android:textSize="@dimen/textSize_10sp" />
+
+                        <TextView
+                            android:id="@+id/rec_title_dish_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_mini_5dp"
+                            android:text="@string/list_of_recommended_2_title"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/textSize_12sp" />
+
+                        <LinearLayout
+                            android:id="@+id/rec_rating_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <RatingBar
+                                android:id="@+id/rec_rating_bar_3"
+                                style="@style/Widget.AppCompat.RatingBar.Small"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/margin_mini_5dp"
+                                android:layout_marginTop="@dimen/margin_mini_5dp"
+                                android:layout_marginEnd="@dimen/margin_mini_5dp"
+                                android:progressTint="@color/orange"
+                                android:rating="5"
+                                android:stepSize="0.1" />
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
-                                android:gravity="center"
-                                android:text="45 мин"
-                                android:textColor="@color/dark_grey"
+                                android:layout_marginStart="@dimen/margin_mini_5dp"
+                                android:layout_marginTop="@dimen/margin_mini_5dp"
+                                android:text="280 калорий"
+                                android:textColor="@color/orange"
                                 android:textSize="@dimen/textSize_10sp" />
+
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/rec_footer_3"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="35dp"
-                            android:orientation="horizontal">
+                            android:layout_height="wrap_content">
 
-                            <ImageView
-                                android:id="@+id/rec_meal_2"
-                                android:layout_width="15dp"
-                                android:layout_height="@dimen/marginStartMainActivity_30do"
-                                android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
-                                android:src="@drawable/service_desk" />
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
-                                android:gravity="center"
-                                android:text="1 порция"
-                                android:textColor="@color/dark_grey"
-                                android:textSize="@dimen/textSize_10sp" />
+                                <ImageView
+                                    android:id="@+id/rec_timer_3"
+                                    android:layout_width="15dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginStart="@dimen/margin_mini_5dp"
+                                    android:src="@drawable/time" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
+                                    android:gravity="center"
+                                    android:text="45 мин"
+                                    android:textColor="@color/dark_grey"
+                                    android:textSize="@dimen/textSize_10sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="35dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/rec_meal_3"
+                                    android:layout_width="15dp"
+                                    android:layout_height="@dimen/margin_medium_variant_two_30dp"
+                                    android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
+                                    android:src="@drawable/service_desk" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="@dimen/marginStartMainActivity_3dp"
+                                    android:gravity="center"
+                                    android:text="1 порция"
+                                    android:textColor="@color/dark_grey"
+                                    android:textSize="@dimen/textSize_10sp" />
+                            </LinearLayout>
+
                         </LinearLayout>
 
                     </LinearLayout>
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toEndOf="@+id/description_rec_dish_2"
-                    tools:ignore="TooManyViews">
-
-                    <androidx.appcompat.widget.AppCompatCheckBox
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="40dp"
-                        android:button="@drawable/like"
-                        android:gravity="center_vertical" />
-                </LinearLayout>
+                        android:layout_toEndOf="@+id/description_rec_dish_3"
+                        tools:ignore="TooManyViews">
 
-            </RelativeLayout>
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="40dp"
+                            android:clickable="true"
+                            android:checked="false"
+                            android:button="@drawable/checkbox_states"
+                            android:gravity="center_vertical"
+                            android:focusable="true" />
+                    </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
+                </RelativeLayout>
 
-    </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:id="@+id/recommend_recipe_2"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="12dp"-->
+<!--                app:cardBackgroundColor="@color/gray"-->
+<!--                app:cardCornerRadius="@dimen/cardCornerRadius_10dp">-->
+
+<!--                <RelativeLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content">-->
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/rec_recipe_2"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_centerVertical="true"-->
+<!--                        android:scaleType="fitCenter"-->
+<!--                        android:src="@drawable/fish_dish_1" />-->
+
+<!--                    <LinearLayout-->
+<!--                        android:id="@+id/description_rec_dish_2"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="100dp"-->
+<!--                        android:orientation="vertical">-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/rec_type_of_meals_2"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginStart="@dimen/marginStartMainActivity_5dp"-->
+<!--                            android:text="@string/lunch_title"-->
+<!--                            android:textColor="@color/blue"-->
+<!--                            android:textSize="@dimen/textSize_10sp" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/rec_title_dish_2"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginStart="@dimen/marginStartMainActivity_5dp"-->
+<!--                            android:text="@string/list_of_recommended_2_title"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="@dimen/textSize_12sp" />-->
+
+<!--                        <LinearLayout-->
+<!--                            android:id="@+id/rec_rating_2"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content">-->
+
+<!--                            <RatingBar-->
+<!--                                android:id="@+id/rec_rating_bar_2"-->
+<!--                                style="@style/Widget.AppCompat.RatingBar.Small"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginStart="@dimen/marginStartMainActivity_5dp"-->
+<!--                                android:layout_marginTop="@dimen/marginTopMainActivity_5dp"-->
+<!--                                android:layout_marginEnd="@dimen/marginEndMainActivity_5dp"-->
+<!--                                android:progressTint="@color/orange"-->
+<!--                                android:rating="5"-->
+<!--                                android:stepSize="0.1" />-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:layout_marginStart="@dimen/marginStartMainActivity_5dp"-->
+<!--                                android:layout_marginTop="@dimen/marginTopMainActivity_5dp"-->
+<!--                                android:text="280 калорий"-->
+<!--                                android:textColor="@color/orange"-->
+<!--                                android:textSize="@dimen/textSize_10sp" />-->
+
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:id="@+id/rec_footer_2"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content">-->
+
+<!--                            <LinearLayout-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:orientation="horizontal">-->
+
+<!--                                <ImageView-->
+<!--                                    android:id="@+id/rec_timer_2"-->
+<!--                                    android:layout_width="15dp"-->
+<!--                                    android:layout_height="30dp"-->
+<!--                                    android:layout_marginStart="@dimen/marginStartMainActivity_5dp"-->
+<!--                                    android:src="@drawable/time" />-->
+
+<!--                                <TextView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="match_parent"-->
+<!--                                    android:layout_marginStart="@dimen/marginStartMainActivity_3dp"-->
+<!--                                    android:gravity="center"-->
+<!--                                    android:text="45 мин"-->
+<!--                                    android:textColor="@color/dark_grey"-->
+<!--                                    android:textSize="@dimen/textSize_10sp" />-->
+<!--                            </LinearLayout>-->
+
+<!--                            <LinearLayout-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginStart="35dp"-->
+<!--                                android:orientation="horizontal">-->
+
+<!--                                <ImageView-->
+<!--                                    android:id="@+id/rec_meal_2"-->
+<!--                                    android:layout_width="15dp"-->
+<!--                                    android:layout_height="@dimen/marginStartMainActivity_30do"-->
+<!--                                    android:layout_marginStart="@dimen/marginStartMainActivity_3dp"-->
+<!--                                    android:src="@drawable/service_desk" />-->
+
+<!--                                <TextView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="match_parent"-->
+<!--                                    android:layout_marginStart="@dimen/marginStartMainActivity_3dp"-->
+<!--                                    android:gravity="center"-->
+<!--                                    android:text="1 порция"-->
+<!--                                    android:textColor="@color/dark_grey"-->
+<!--                                    android:textSize="@dimen/textSize_10sp" />-->
+<!--                            </LinearLayout>-->
+
+<!--                        </LinearLayout>-->
+
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_toEndOf="@+id/description_rec_dish_2"-->
+<!--                        tools:ignore="TooManyViews">-->
+
+<!--                        <androidx.appcompat.widget.AppCompatCheckBox-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginStart="40dp"-->
+<!--                            android:button="@drawable/like"-->
+<!--                            android:gravity="center_vertical" />-->
+<!--                    </LinearLayout>-->
+
+<!--                </RelativeLayout>-->
+
+<!--            </androidx.cardview.widget.CardView>-->
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:id="@+id/recommend_recipe_4"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="12dp"-->
+<!--                app:cardBackgroundColor="@color/gray"-->
+<!--                app:cardCornerRadius="@dimen/cardCornerRadius_10dp">-->
+
+<!--                <RelativeLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content">-->
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/rec_recipe_4"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_centerVertical="true"-->
+<!--                        android:scaleType="fitCenter"-->
+<!--                        android:src="@drawable/fish_dish_1" />-->
+
+<!--                    <LinearLayout-->
+<!--                        android:id="@+id/description_rec_dish_4"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="100dp"-->
+<!--                        android:orientation="vertical">-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/rec_type_of_meals_4"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginStart="@dimen/marginStartMainActivity_5dp"-->
+<!--                            android:text="@string/lunch_title"-->
+<!--                            android:textColor="@color/blue"-->
+<!--                            android:textSize="@dimen/textSize_10sp" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/rec_title_dish_4"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginStart="@dimen/marginStartMainActivity_5dp"-->
+<!--                            android:text="@string/list_of_recommended_2_title"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="@dimen/textSize_12sp" />-->
+
+<!--                        <LinearLayout-->
+<!--                            android:id="@+id/rec_rating_4"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content">-->
+
+<!--                            <RatingBar-->
+<!--                                android:id="@+id/rec_rating_bar_4"-->
+<!--                                style="@style/Widget.AppCompat.RatingBar.Small"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginStart="@dimen/marginStartMainActivity_5dp"-->
+<!--                                android:layout_marginTop="@dimen/marginTopMainActivity_5dp"-->
+<!--                                android:layout_marginEnd="@dimen/marginEndMainActivity_5dp"-->
+<!--                                android:progressTint="@color/orange"-->
+<!--                                android:rating="5"-->
+<!--                                android:stepSize="0.1" />-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:layout_marginStart="@dimen/marginStartMainActivity_5dp"-->
+<!--                                android:layout_marginTop="@dimen/marginTopMainActivity_5dp"-->
+<!--                                android:text="280 калорий"-->
+<!--                                android:textColor="@color/orange"-->
+<!--                                android:textSize="@dimen/textSize_10sp" />-->
+
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:id="@+id/rec_footer_4"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content">-->
+
+<!--                            <LinearLayout-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:orientation="horizontal">-->
+
+<!--                                <ImageView-->
+<!--                                    android:id="@+id/rec_timer_4"-->
+<!--                                    android:layout_width="15dp"-->
+<!--                                    android:layout_height="30dp"-->
+<!--                                    android:layout_marginStart="@dimen/marginStartMainActivity_5dp"-->
+<!--                                    android:src="@drawable/time" />-->
+
+<!--                                <TextView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="match_parent"-->
+<!--                                    android:layout_marginStart="@dimen/marginStartMainActivity_3dp"-->
+<!--                                    android:gravity="center"-->
+<!--                                    android:text="45 мин"-->
+<!--                                    android:textColor="@color/dark_grey"-->
+<!--                                    android:textSize="@dimen/textSize_10sp" />-->
+<!--                            </LinearLayout>-->
+
+<!--                            <LinearLayout-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginStart="35dp"-->
+<!--                                android:orientation="horizontal">-->
+
+<!--                                <ImageView-->
+<!--                                    android:id="@+id/rec_meal_4"-->
+<!--                                    android:layout_width="15dp"-->
+<!--                                    android:layout_height="@dimen/marginStartMainActivity_30do"-->
+<!--                                    android:layout_marginStart="@dimen/marginStartMainActivity_3dp"-->
+<!--                                    android:src="@drawable/service_desk" />-->
+
+<!--                                <TextView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="match_parent"-->
+<!--                                    android:layout_marginStart="@dimen/marginStartMainActivity_3dp"-->
+<!--                                    android:gravity="center"-->
+<!--                                    android:text="1 порция"-->
+<!--                                    android:textColor="@color/dark_grey"-->
+<!--                                    android:textSize="@dimen/textSize_10sp" />-->
+<!--                            </LinearLayout>-->
+
+<!--                        </LinearLayout>-->
+
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_toEndOf="@+id/description_rec_dish_4"-->
+<!--                        tools:ignore="TooManyViews">-->
+
+<!--                        <androidx.appcompat.widget.AppCompatCheckBox-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginStart="40dp"-->
+<!--                            android:button="@drawable/like"-->
+<!--                            android:gravity="center_vertical" />-->
+<!--                    </LinearLayout>-->
+
+<!--                </RelativeLayout>-->
+
+<!--            </androidx.cardview.widget.CardView>-->
+
+        </LinearLayout>
+
+<!--    </ScrollView>-->
 
 </RelativeLayout>

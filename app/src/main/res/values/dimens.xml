@@ -11,22 +11,20 @@
     <dimen name="indentFromTheMarginEndLoginActivity_80">80dp</dimen>
 
     <!--    Main Activity-->
-    <dimen name="marginStartMainActivity_24dp">24dp</dimen>
-    <dimen name="marginTopMainActivity_16dp">16dp</dimen>
-    <dimen name="marginEndMainActivity_16dp">16dp</dimen>
+    <dimen name="margin_medium_variant_one_24dp">24dp</dimen>
+    <dimen name="margin_normal_16dp">16dp</dimen>
     <dimen name="marginStartMainActivity_25dp">25dp</dimen>
-    <dimen name="marginStartMainActivity_16dp">16dp</dimen>
-    <dimen name="marginTopMainActivity_24dp">24dp</dimen>
-    <dimen name="marginEndMainActivity_30dp">30dp</dimen>
+    <dimen name="margin_medium_variant_two_30dp">30dp</dimen>
     <dimen name="marginStartMainActivity_85dp">85dp</dimen>
-    <dimen name="marginTopMainActivity_15dp">15dp</dimen>
     <dimen name="marginTopMainActivity_20dp">20dp</dimen>
-    <dimen name="marginEndMainActivity_15dp">15dp</dimen>
     <dimen name="marginTopMainActivity_10dp">10dp</dimen>
-    <dimen name="marginStartMainActivity_5dp">5dp</dimen>
-    <dimen name="marginStartMainActivity_30dp">30dp</dimen>
     <dimen name="marginStartMainActivity_3dp">3dp</dimen>
-
+    <dimen name="margin_mini_5dp">5dp</dimen>
+    <dimen name="marginEndMainActivity_80dp">80dp</dimen>
+    <dimen name="maxWidthMainActivity_120dp">120dp</dimen>
+    <dimen name="marginStartMainActivity_50dp">50dp</dimen>
+    <dimen name="marginStartMainActivity_35dp">35dp</dimen>
+    <dimen name="marginStartMainActivity_40dp">40dp</dimen>
 
     <!--    Text size-->
     <dimen name="textSize_40sp">40sp</dimen>
@@ -37,14 +35,8 @@
     <dimen name="textSize_12sp">12sp</dimen>
     <dimen name="textSize_10sp">10sp</dimen>
     <dimen name="textSize_15sp">15sp</dimen>
-    <dimen name="marginTopMainActivity_5dp">5dp</dimen>
-    <dimen name="marginEndMainActivity_5dp">5dp</dimen>
-    <dimen name="marginStartMainActivity_30do">30dp</dimen>
-    <dimen name="marginEndMainActivity_80dp">80dp</dimen>
+
+    <!--    General size-->
     <dimen name="cardCornerRadius_10dp">10dp</dimen>
-    <dimen name="maxWidthMainActivity_120dp">120dp</dimen>
-    <dimen name="marginStartMainActivity_50dp">50dp</dimen>
-    <dimen name="marginStartMainActivity_35dp">35dp</dimen>
-    <dimen name="marginStartMainActivity_40dp">40dp</dimen>
 
 </resources>
