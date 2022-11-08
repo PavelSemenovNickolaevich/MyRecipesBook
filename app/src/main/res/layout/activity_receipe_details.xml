@@ -42,7 +42,10 @@
         android:layout_below="@id/type_of_meals"
         android:layout_marginStart="40dp"
         android:layout_toEndOf="@id/title_for_recipe"
-        android:button="@drawable/like" />
+        android:clickable="true"
+        android:checked="false"
+        android:button="@drawable/checkbox_states"
+        android:focusable="true" />
 
     <RatingBar
         android:id="@+id/ratingBar"
@@ -238,9 +241,9 @@
         android:id="@+id/bon_appetite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/registration_layout"
+        android:layout_above="@+id/back_btn"
         android:layout_centerInParent="true"
-        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
         android:layout_marginBottom="15dp"
         android:text="@string/bon_appetit_text"
         android:textColor="@color/black"
@@ -251,32 +254,24 @@
         android:id="@+id/smile_icon"
         android:layout_width="21dp"
         android:layout_height="20dp"
-        android:layout_above="@+id/registration_layout"
+        android:layout_above="@+id/back_btn"
         android:layout_marginBottom="15dp"
         android:layout_toEndOf="@id/bon_appetite"
         android:src="@drawable/smile_icon" />
 
-    <FrameLayout
-        android:id="@+id/registration_layout"
-        android:layout_width="315dp"
-        android:layout_height="55dp"
+    <Button
+        android:id="@+id/back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp">
-
-        <ImageButton
-            android:id="@+id/registrationBtn"
-            android:layout_width="315dp"
-            android:layout_height="55dp"
-            android:src="@drawable/button_rectangle" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/back_button_text"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-    </FrameLayout>
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="@color/orange"
+        android:text="@string/back_button_text"
+        app:cornerRadius="20dp"
+        android:textAllCaps="false" />
 
 </RelativeLayout>

@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".FilterActivity">
+
+    <RelativeLayout
+        android:id="@+id/top_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/indentFromTheMarginStartFilterActivity_15"
+            android:layout_marginTop="@dimen/indentFromTheMarginTopFilterActivity_10"
+            android:text="Фильтр"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textSize_24sp" />
+
+        <Button
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:text="Очистить"
+            android:textAllCaps="false"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/textSize_16sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/type_of_meals_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/indentFromTheMarginStartFilterActivity_15"
+        android:layout_marginTop="@dimen/indentFromTheMarginTopFilterActivity_10"
+        android:text="Прием пищи"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSize_16sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/meals_cg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:chipBackgroundColor="@color/orange"
+        app:chipSpacingHorizontal="@android:dimen/app_icon_size"
+        app:singleLine="true"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/breakfast_ch"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Завтрак"
+            app:chipCornerRadius="8dp" />
+
+        <com.google.android.material.chip.Chip
+
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Поздний завтрак"
+            app:chipCornerRadius="8dp" />
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Обед"
+            app:chipCornerRadius="8dp" />
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <com.google.android.material.chip.ChipGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        app:chipBackgroundColor="@color/orange"
+        app:chipSpacingHorizontal="@android:dimen/app_icon_size"
+        app:singleLine="true"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ужин"
+            app:chipCornerRadius="8dp" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/line_1_md"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/indentFromTheMarginStartFilterActivity_15"
+        android:layout_marginTop="@dimen/indentFromTheMarginTopFilterActivity_10"
+        android:layout_marginEnd="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/indentFromTheMarginStartFilterActivity_15"
+        android:layout_marginTop="@dimen/indentFromTheMarginTopFilterActivity_10"
+        android:text="Блюдо"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSize_16sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.chip.ChipGroup
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:chipBackgroundColor="@color/orange"
+        app:chipSpacingHorizontal="@android:dimen/app_icon_size"
+        app:singleLine="true"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cупы"
+            app:chipCornerRadius="8dp" />
+
+        <com.google.android.material.chip.Chip
+
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Закуски"
+            app:chipCornerRadius="8dp" />
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Первое блюдо"
+            app:chipCornerRadius="8dp" />
+
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <com.google.android.material.chip.ChipGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:chipBackgroundColor="@color/orange"
+        app:chipSpacingHorizontal="@android:dimen/app_icon_size"
+        app:singleLine="true"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Главное блюдо"
+            app:chipCornerRadius="8dp" />
+
+        <com.google.android.material.chip.Chip
+
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Напитки"
+            app:chipCornerRadius="8dp" />
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Десерты"
+            app:chipCornerRadius="8dp" />
+
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <com.google.android.material.chip.ChipGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        app:chipBackgroundColor="@color/orange"
+        app:chipSpacingHorizontal="@android:dimen/app_icon_size"
+        app:singleLine="true"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Мясные блюда"
+            app:chipCornerRadius="8dp" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/indentFromTheMarginStartFilterActivity_15"
+        android:layout_marginTop="@dimen/indentFromTheMarginTopFilterActivity_10"
+        android:layout_marginRight="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/indentFromTheMarginStartFilterActivity_15"
+        android:layout_marginTop="@dimen/indentFromTheMarginTopFilterActivity_10"
+        android:text="Количество  порций"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSize_16sp"
+        android:textStyle="bold" />
+
+    <SeekBar
+        android:id="@+id/count_of_serving_seekbar"
+        style="@style/FiltersStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/indentFromTheMarginTopFilterActivity_10" />
+
+    <TextView
+        android:id="@+id/time_to_cook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/indentFromTheMarginStartFilterActivity_15"
+        android:layout_marginTop="@dimen/indentFromTheMarginTopFilterActivity_10"
+        android:text="Время приготовления"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSize_16sp"
+        android:textStyle="bold" />
+
+    <SeekBar
+        android:id="@+id/time_to_cook_seekbar"
+        style="@style/FiltersStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/indentFromTheMarginTopFilterActivity_10"/>
+
+    <TextView
+        android:id="@+id/calories_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/indentFromTheMarginStartFilterActivity_15"
+        android:layout_marginTop="@dimen/indentFromTheMarginTopFilterActivity_10"
+        android:text="Калории"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <SeekBar
+        android:id="@+id/calories_seekbar"
+        style="@style/FiltersStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/indentFromTheMarginTopFilterActivity_10"/>
+
+    <TextView
+        android:id="@+id/rating_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/indentFromTheMarginStartFilterActivity_15"
+        android:layout_marginTop="@dimen/indentFromTheMarginTopFilterActivity_10"
+        android:text="Рейтинг"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSize_16sp"
+        android:textStyle="bold" />
+
+    <SeekBar
+        android:id="@+id/rating_seekbar"
+        style="@style/FiltersStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/indentFromTheMarginTopFilterActivity_10" />
+
+    <Button
+        android:id="@+id/applyBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:paddingLeft="80dp"
+        android:paddingRight="80dp"
+        android:backgroundTint="@color/orange"
+        app:cornerRadius="20dp"
+        android:text="Применить"
+        android:textAllCaps="false" />
+
+</LinearLayout>

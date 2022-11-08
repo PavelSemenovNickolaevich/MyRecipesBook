@@ -5,10 +5,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
+import ru.android.myrecipesbook.databinding.ActivityMainBinding
 import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+    private val filterBtn: ImageButton by lazy { binding.filterBtn }
 
     fun start(context: Context) {
         val intent = Intent(context, MainActivity::class.java)
@@ -17,14 +20,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         Timber.d("This is log for onCreate")
 
-//        var recipeBtn:ImageButton = findViewById(R.id.recipe_1_btn)
-
-//        recipeBtn.setOnClickListener{
-//            val intent = Intent(this, ReceipeDetailsActivity::class.java )
-//            startActivity(intent)
-//        }
+        filterBtn.setOnClickListener{
+            val intent = Intent(this, FilterActivity::class.java )
+            startActivity(intent)
+        }
     }
 }
