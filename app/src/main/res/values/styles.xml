@@ -23,4 +23,10 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">20dp</item>
     </style>
+
+    <style name="CustomChipChoice" parent="@style/Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/background_color_chip_state_list</item>
+    </style>
+
+
 </resources>
