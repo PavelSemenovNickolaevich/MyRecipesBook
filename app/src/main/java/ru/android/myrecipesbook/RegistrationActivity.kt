@@ -1,6 +1,5 @@
 package ru.android.myrecipesbook
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -29,7 +28,7 @@ class RegistrationActivity : AppCompatActivity(), View.OnClickListener {
     private val email: TextInputEditText by lazy { binding.textInputEmail }
     private val password: TextInputEditText by lazy { binding.textInputPassword }
 
-    fun start(context: Context) {
+    fun start(context: WelcomeActivity) {
         val intent = Intent(context, RegistrationActivity::class.java)
         context.startActivity(intent)
     }

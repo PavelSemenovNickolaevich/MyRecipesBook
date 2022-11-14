@@ -42,9 +42,9 @@
         android:layout_below="@id/type_of_meals"
         android:layout_marginStart="40dp"
         android:layout_toEndOf="@id/title_for_recipe"
-        android:clickable="true"
-        android:checked="false"
         android:button="@drawable/checkbox_states"
+        android:checked="false"
+        android:clickable="true"
         android:focusable="true" />
 
     <RatingBar
@@ -242,9 +242,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/back_btn"
+        android:layout_below="@+id/list_of_steps"
         android:layout_centerInParent="true"
         android:layout_marginStart="40dp"
-        android:layout_marginBottom="15dp"
         android:text="@string/bon_appetit_text"
         android:textColor="@color/black"
         android:textSize="14sp"
@@ -252,10 +252,10 @@
 
     <ImageView
         android:id="@+id/smile_icon"
-        android:layout_width="21dp"
-        android:layout_height="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/back_btn"
-        android:layout_marginBottom="15dp"
+        android:layout_below="@+id/list_of_steps"
         android:layout_toEndOf="@id/bon_appetite"
         android:src="@drawable/smile_icon" />
 
@@ -267,10 +267,10 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginHorizontal="80dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="@dimen/margin_medium_variant_two_30dp"
         android:backgroundTint="@color/orange"
         android:text="@string/back_button_text"
-        app:cornerRadius="20dp"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        app:cornerRadius="20dp" />
 
 </RelativeLayout>
