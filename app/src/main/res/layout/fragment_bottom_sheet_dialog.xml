@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/CustomBottomSheetDialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".BottomSheetDialogFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/top_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/indentFromTheMarginStartFilterActivity_15"
+                android:layout_marginTop="@dimen/indentFromTheMarginTopFilterActivity_10"
+                android:text="@string/title_Filter"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textSize_24sp" />
+
+            <Button
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:id="@+id/clear_filter_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/margin_mini_5dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/clear_filter_btn"
+                android:textAllCaps="false"
+                android:textColor="@color/orange"
+                android:textSize="@dimen/textSize_16sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/type_of_meals_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/indentFromTheMarginStartFilterActivity_15"
+            android:layout_marginTop="@dimen/indentFromTheMarginTopFilterActivity_10"
+            android:text="@string/title_type_of_meals"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textSize_16sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_medium_variant_two_30dp"
+            app:chipSpacingHorizontal="@dimen/margin_medium_variant_two_30dp"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_breakfast"
+                style="@style/CustomChipChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/breakfast_txt"
+                app:chipCornerRadius="@dimen/chip_corner_radius_8dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_late_breakfast"
+                style="@style/CustomChipChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/late_breakfast_txt"
+                app:chipCornerRadius="@dimen/chip_corner_radius_8dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_dinner"
+                style="@style/CustomChipChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dinner_txt"
+                app:chipCornerRadius="@dimen/chip_corner_radius_8dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_supper"
+                style="@style/CustomChipChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/breakfast_ch"
+                android:text="@string/supper_txt"
+                app:chipCornerRadius="@dimen/chip_corner_radius_8dp" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/line_1_md"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/indentFromTheMarginStartFilterActivity_15"
+            android:layout_marginTop="@dimen/indentFromTheMarginTopFilterActivity_10"
+            android:layout_marginEnd="15dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/indentFromTheMarginStartFilterActivity_15"
+            android:layout_marginTop="@dimen/indentFromTheMarginTopFilterActivity_10"
+            android:text="@string/dish_title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textSize_16sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_medium_variant_two_30dp"
+            app:chipSpacingHorizontal="@dimen/margin_medium_variant_two_30dp"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_soups"
+                style="@style/CustomChipChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/soups_txt"
+                app:chipCornerRadius="@dimen/chip_corner_radius_8dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_snacks"
+                style="@style/CustomChipChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/snacks_title"
+                app:chipCornerRadius="@dimen/chip_corner_radius_8dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_first_dish"
+                style="@style/CustomChipChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/first_dish_txt"
+                app:chipCornerRadius="@dimen/chip_corner_radius_8dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_main_dish"
+                style="@style/CustomChipChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/main_dish_txt"
+                app:chipCornerRadius="@dimen/chip_corner_radius_8dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_drinks"
+                style="@style/CustomChipChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/drinks_txt"
+                app:chipCornerRadius="@dimen/chip_corner_radius_8dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_dessert"
+                style="@style/CustomChipChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/desserts_txt"
+                app:chipCornerRadius="@dimen/chip_corner_radius_8dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_meat_dish"
+                style="@style/CustomChipChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/meat_dish_txt"
+                app:chipCornerRadius="@dimen/chip_corner_radius_8dp" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/indentFromTheMarginStartFilterActivity_15"
+            android:layout_marginTop="@dimen/indentFromTheMarginTopFilterActivity_10"
+            android:layout_marginEnd="15dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/indentFromTheMarginStartFilterActivity_15"
+            android:layout_marginTop="@dimen/indentFromTheMarginTopFilterActivity_10"
+            android:text="@string/count_of_meals_txt"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textSize_16sp"
+            android:textStyle="bold" />
+
+        <SeekBar
+            android:id="@+id/count_of_serving_seekbar"
+            style="@style/FiltersStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_mini_5dp"
+            android:max="5" />
+
+        <TextView
+            android:id="@+id/count_of_serving_seekbar_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/value_2"
+            android:textSize="@dimen/textSize_12sp" />
+
+        <TextView
+            android:id="@+id/time_to_cook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/indentFromTheMarginStartFilterActivity_15"
+            android:text="@string/time_to_cook_txt"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textSize_16sp"
+            android:textStyle="bold" />
+
+        <SeekBar
+            android:id="@+id/time_to_cook_seekbar"
+            style="@style/FiltersStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_mini_5dp"
+            android:max="120" />
+
+        <TextView
+            android:id="@+id/time_to_cook_seekbar_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/value_20m"
+            android:textSize="@dimen/textSize_12sp" />
+
+        <TextView
+            android:id="@+id/calories_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/indentFromTheMarginStartFilterActivity_15"
+            android:text="@string/count_of_calories"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textSize_16sp"
+            android:textStyle="bold" />
+
+        <SeekBar
+            android:id="@+id/calories_seekbar"
+            style="@style/FiltersStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_mini_5dp"
+            android:max="1000" />
+
+        <TextView
+            android:id="@+id/calories_seekbar_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/value_200"
+            android:textSize="@dimen/textSize_12sp" />
+
+        <TextView
+            android:id="@+id/rating_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/indentFromTheMarginStartFilterActivity_15"
+            android:text="@string/rating_txt"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textSize_16sp"
+            android:textStyle="bold" />
+
+        <SeekBar
+            android:id="@+id/rating_seekbar"
+            style="@style/FiltersStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_mini_5dp"
+            android:max="5" />
+
+        <TextView
+            android:id="@+id/rating_seekbar_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/value_1"
+            android:textSize="@dimen/textSize_12sp" />
+
+        <Button
+            android:id="@+id/applyBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/marginTopMainActivity_20dp"
+            android:backgroundTint="@color/orange"
+            android:paddingLeft="80dp"
+            android:paddingRight="80dp"
+            android:text="@string/apply_txt"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:cornerRadius="20dp" />
+    </LinearLayout>
+
+</ScrollView>

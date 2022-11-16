@@ -38,5 +38,6 @@
 
     <!--    General size-->
     <dimen name="cardCornerRadius_10dp">10dp</dimen>
+    <dimen name="chip_corner_radius_8dp">8dp</dimen>
 
 </resources>
