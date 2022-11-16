@@ -6,13 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:itemIconTint="@color/orange"
-        app:itemTextColor="@color/orange"
+        app:itemIconTint="@color/bottom_bar"
+        app:itemTextColor="@color/bottom_bar"
         app:itemBackground="@color/gray"
         android:layout_alignParentBottom="true"
         app:menu="@menu/menu_bottom_navigation" />

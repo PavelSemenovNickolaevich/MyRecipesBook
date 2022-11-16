@@ -79,6 +79,17 @@
     <string name="bread_name">bread</string>
     <string name="cinnamon_name">cinnamon</string>
     <string name="strawberry_name">strawberry</string>
+    <string name="title_Filter">Фильтр</string>
+    <string name="title_type_of_meals">Прием пищи</string>
+    <string name="late_breakfast_txt">Поздний завтрак</string>
+    <string name="dish_title">Блюдо</string>
+    <string name="main_dish_txt">Главное блюдо</string>
+    <string name="meat_dish_txt">Мясные блюда</string>
+    <string name="count_of_meals_txt">Количество порций</string>
+    <string name="value_2">2</string>
+    <string name="time_to_cook_txt">Время приготовления</string>
+    <string name="count_of_calories">Калории</string>
+    <string name="apply_txt">Применить</string>
     <!--Ingredients-->
 
 </resources>

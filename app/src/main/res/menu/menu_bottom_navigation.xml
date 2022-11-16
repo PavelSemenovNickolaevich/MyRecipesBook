@@ -3,17 +3,17 @@
     <group android:checkableBehavior="single">
     <item
         android:id="@+id/search_fragment"
-        android:icon="@drawable/ic_search_24px"
+        android:icon="@drawable/ic_baseline_search_24"
         android:title="@string/search_title" />
 
     <item
         android:id="@+id/my_recipes_fragment"
-        android:icon="@drawable/ic_favorite_24px"
+        android:icon="@drawable/ic_baseline_favorite_24"
         android:title="@string/my_recipes_title" />
 
     <item
         android:id="@+id/profile_fragment"
-        android:icon="@drawable/ic_person_24px"
+        android:icon="@drawable/ic_baseline_person_24"
         android:title="@string/profile_title" />
     </group>
 </menu>
