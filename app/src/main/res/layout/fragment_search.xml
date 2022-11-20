@@ -130,6 +130,7 @@
             android:orientation="horizontal">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/popular_recipes_card_view"
                 android:layout_width="147dp"
                 android:layout_height="wrap_content"
                 app:cardBackgroundColor="@color/gray"

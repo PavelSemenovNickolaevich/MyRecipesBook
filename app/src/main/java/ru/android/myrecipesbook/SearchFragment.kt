@@ -2,6 +2,7 @@ package ru.android.myrecipesbook
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +15,8 @@ import timber.log.Timber
 class SearchFragment : Fragment() {
 
     private lateinit var binding: FragmentSearchBinding
+    private var fakeFoodRepository = FakeFoodRepository
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,11 +37,20 @@ class SearchFragment : Fragment() {
             )
         }
 
+        childFragmentManager.setFragmentResultListener(
+            "filterChanged",
+            viewLifecycleOwner
+        ) { key, bundle ->
+            val result: BottomSheetDialogFragment.SelectedFilterHolder =
+                bundle.getSerializable("bundleKey") as BottomSheetDialogFragment.SelectedFilterHolder
+
+            Log.d("FragmentResultListener", result.selectedMeals.toString())
+        }
+
         fullRecipeButton.setOnClickListener {
             val intent = Intent(context, ReceipeDetailsActivity::class.java)
             startActivity(intent)
         }
         return root
     }
-
 }
