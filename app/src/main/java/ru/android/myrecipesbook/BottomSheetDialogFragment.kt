@@ -17,6 +17,9 @@ import ru.android.myrecipesbook.enums.Meals
 import java.io.Serializable
 
 
+private const val FILTER_CHANGED = "filterChanged"
+private const val BUNDLE_KEY = "bundleKey"
+
 class BottomSheetDialogFragment :
     com.google.android.material.bottomsheet.BottomSheetDialogFragment() {
 
@@ -54,41 +57,40 @@ class BottomSheetDialogFragment :
         chipGroupOfMeals.setOnCheckedStateChangeListener { group, checkedId ->
 
             data.selectedMeals =
-                when (checkedId) {
-                    checkedId.map { R.id.chip_breakfast.toString() } -> Meals.BREAKFAST.toString()
-                    checkedId.map { R.id.chip_late_breakfast.toString() } -> Meals.LATE_BREAKFAST.toString()
-                    checkedId.map { R.id.chip_supper.toString() } -> Meals.SUPPER.toString()
-                    checkedId.map { R.id.chip_dinner.toString() } -> Meals.DINNER.toString()
+                when (checkedId.first()) {
+                    R.id.chip_breakfast -> Meals.BREAKFAST.toString()
+                    R.id.chip_late_breakfast -> Meals.LATE_BREAKFAST.toString()
+                    R.id.chip_supper -> Meals.SUPPER.toString()
+                    R.id.chip_dinner -> Meals.DINNER.toString()
                     else -> {
                         ""
                     }
                 }
-            setFragmentResult("filterChanged", bundleOf("bundleKey" to data))
+            setFragmentResult(FILTER_CHANGED, bundleOf(BUNDLE_KEY to data))
         }
 
         chipGroupOfDish.setOnCheckedStateChangeListener { group, checkedId ->
 
             data.selectedDish =
-                when (checkedId) {
-                    checkedId.map { R.id.chip_soups.toString() } -> FoodCategory.SOUP.toString()
-                    checkedId.map { R.id.chip_dessert.toString() } -> FoodCategory.DESSERT.toString()
-                    checkedId.map { R.id.chip_drinks.toString() } -> FoodCategory.DRINK.toString()
-                    checkedId.map { R.id.chip_snacks.toString() } -> FoodCategory.SNACK.toString()
-                    checkedId.map { R.id.chip_main_dish.toString() } -> FoodCategory.MAIN_COURSE.toString()
-                    checkedId.map { R.id.chip_first_dish.toString() } -> FoodCategory.FIRST_COURSE.toString()
-                    checkedId.map { R.id.chip_meat_dish.toString() } -> FoodCategory.MEAT_DISH.toString()
+                when (checkedId.first()) {
+                    R.id.chip_soups -> FoodCategory.SOUP.toString()
+                    R.id.chip_dessert -> FoodCategory.DESSERT.toString()
+                    R.id.chip_drinks -> FoodCategory.DRINK.toString()
+                    R.id.chip_snacks -> FoodCategory.SNACK.toString()
+                    R.id.chip_main_dish -> FoodCategory.MAIN_COURSE.toString()
+                    R.id.chip_first_dish -> FoodCategory.FIRST_COURSE.toString()
+                    R.id.chip_meat_dish -> FoodCategory.MEAT_DISH.toString()
                     else -> {
                         ""
                     }
                 }
-            setFragmentResult("filterChanged", bundleOf("bundleKey" to data))
+            setFragmentResult(FILTER_CHANGED, bundleOf(BUNDLE_KEY to data))
         }
 
         data.selectedCountOfServings = setSeekBarValue(countOfServingSeekBar, countOfServingValue)
         data.selectedCountOfCalories = setSeekBarValue(countOfCaloriesSeekBar, countOfCaloriesValue)
         data.selectedRating = setSeekBarValue(timeToCookSeekbar, timeToCookValue).toFloat()
         data.selectedTimeToCook = setSeekBarValue(timeToCookSeekbar, timeToCookValue)
-        setSeekBarValue(ratingSeekBar, ratingValue)
 
         applyBtn.setOnClickListener {
             this.dismiss()

@@ -47,5 +47,6 @@ dependencies {
     implementation libraries.junitExt
     implementation libraries.annotation
     implementation libraries.cardview
-    implementation "androidx.fragment:fragment-ktx:1.5.4"
+    implementation libraries.recyclerview
+    implementation libraries.fragment
 }
