@@ -22,7 +22,7 @@ class DishAdapter(private val dish: List<Recipe>, listItemVerticalDish: Int) :
 
     override fun onBindViewHolder(holder: DishViewHolder, position: Int) {
         val current = dish[position]
-
+        holder.imageView.setImageResource(current.resourceLinkImage)
         holder.typeOfMeals.text = holder.typeOfMeals.context.getString(current.meals.typeOfMeals)
         holder.titleRecipe.text = current.name
         holder.rating.rating = current.rating.toFloat()

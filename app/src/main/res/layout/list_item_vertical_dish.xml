@@ -19,10 +19,11 @@
 
             <ImageView
                 android:id="@+id/rec_recipe_it"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="76dp"
+                android:layout_marginStart="@dimen/margin_mini_5dp"
+                android:layout_height="76dp"
                 android:layout_centerVertical="true"
-                android:scaleType="center"
+                android:scaleType="centerInside"
                 android:src="@drawable/blueberry_muffins" />
 
             <LinearLayout
