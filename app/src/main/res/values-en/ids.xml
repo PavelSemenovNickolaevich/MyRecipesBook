@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="horizontalScrollView" type="id" />
+    <item name="popular_cards" type="id" />
+    <item name="recipe_2" type="id" />
+    <item name="type_of_meals_recipe_2" type="id" />
+    <item name="calories_2" type="id" />
+    <item name="ratingBar_2" type="id" />
+    <item name="rating_2" type="id" />
+    <item name="title_2" type="id" />
+    <item name="ratingBar_3" type="id" />
+    <item name="rating_3" type="id" />
+    <item name="title_3" type="id" />
+    <item name="type_of_meals_recipe_3" type="id" />
+    <item name="recipe_3" type="id" />
+    <item name="meal_2" type="id" />
+    <item name="calories_3" type="id" />
+    <item name="meal_3" type="id" />
+    <item name="timer_3" type="id" />
+    <item name="timer_2" type="id" />
+    <item name="tv_type_of_meals_tv" type="id" />
+</resources>

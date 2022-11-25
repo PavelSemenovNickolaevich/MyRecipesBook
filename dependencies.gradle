@@ -13,7 +13,9 @@ ext.versions = [
         junit                 : '4.13.2',
         junitExt              : '1.1.3',
         annotation            : '1.5.0',
-        cardview              : '1.0.0'
+        cardview              : '1.0.0',
+        fragment              : '1.5.4',
+        recyclerview          : '1.2.1'
 ]
 
 ext.libraries = [
@@ -27,5 +29,8 @@ ext.libraries = [
         junit : "junit:junit:$versions.junit",
         junitExt : "androidx.test.ext:junit:$versions.junitExt",
         annotation: "androidx.annotation:annotation:$versions.annotation",
-        cardview: "androidx.cardview:cardview:$versions.cardview"
+        cardview: "androidx.cardview:cardview:$versions.cardview",
+        fragment: "androidx.fragment:fragment-ktx:$versions.fragment",
+        recyclerview: "androidx.recyclerview:recyclerview:$versions.recyclerview"
+
 ]

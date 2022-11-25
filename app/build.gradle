@@ -47,4 +47,6 @@ dependencies {
     implementation libraries.junitExt
     implementation libraries.annotation
     implementation libraries.cardview
+    implementation libraries.recyclerview
+    implementation libraries.fragment
 }

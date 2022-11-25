@@ -30,8 +30,8 @@
                 android:textSize="@dimen/textSize_24sp" />
 
             <Button
-                style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:id="@+id/clear_filter_btn"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -55,6 +55,7 @@
             android:textStyle="bold" />
 
         <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group_of_meals"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/margin_medium_variant_two_30dp"
@@ -115,6 +116,7 @@
             android:textStyle="bold" />
 
         <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group_of_dish"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/margin_medium_variant_two_30dp"
@@ -230,13 +232,27 @@
             android:layout_marginTop="@dimen/margin_mini_5dp"
             android:max="120" />
 
-        <TextView
-            android:id="@+id/time_to_cook_seekbar_value"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/value_20m"
-            android:textSize="@dimen/textSize_12sp" />
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/time_to_cook_seekbar_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20"
+                android:textSize="@dimen/textSize_12sp" />
+
+            <TextView
+                android:id="@+id/time_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/margin_mini_5dp"
+                android:text="мин"
+                android:textSize="@dimen/textSize_12sp" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/calories_txt"
@@ -256,13 +272,28 @@
             android:layout_marginTop="@dimen/margin_mini_5dp"
             android:max="1000" />
 
-        <TextView
-            android:id="@+id/calories_seekbar_value"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/value_200"
-            android:textSize="@dimen/textSize_12sp" />
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/calories_seekbar_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="200"
+                android:textSize="@dimen/textSize_12sp" />
+
+            <TextView
+                android:id="@+id/cal_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/margin_mini_5dp"
+                android:text="кал"
+                android:textSize="@dimen/textSize_12sp"
+                tools:ignore="RtlSymmetry" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/rating_txt"
