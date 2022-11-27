@@ -116,7 +116,7 @@ object FakeFoodRepository {
     }
 
     fun getFilterListByCalories(list: List<Recipe>, calories: Int, isMore: Boolean): List<Recipe> {
-        return if (isMore) list.filter { it.calories > calories } else list.filter { it.calories < calories }
+        return if (isMore) list.filter { it.calories!! > calories } else list.filter { it.calories!! < calories }
     }
 
     fun getFilterRecipesByTime(list: List<Recipe>, timeMax: Long, timeMin: Long): List<Recipe> {

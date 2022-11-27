@@ -8,11 +8,12 @@ import android.widget.RatingBar
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatCheckBox
 import androidx.recyclerview.widget.RecyclerView
-import ru.android.myrecipesbook.model.Recipe
+import com.squareup.picasso.Picasso
+import ru.android.myrecipesbook.model.RecipesResponse
 
 
-class DishAdapter(private val dish: List<Recipe>, listItemVerticalDish: Int) :
-    RecyclerView.Adapter<DishAdapter.DishViewHolder>() {
+class DishAdapterVertical(private val dish: RecipesResponse, listItemDish: Int) :
+    RecyclerView.Adapter<DishAdapterVertical.DishViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DishViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -21,20 +22,28 @@ class DishAdapter(private val dish: List<Recipe>, listItemVerticalDish: Int) :
     }
 
     override fun onBindViewHolder(holder: DishViewHolder, position: Int) {
-        val current = dish[position]
-        holder.imageView.setImageResource(current.resourceLinkImage)
-        holder.typeOfMeals.text = holder.typeOfMeals.context.getString(current.meals.typeOfMeals)
-        holder.titleRecipe.text = current.name
-        holder.rating.rating = current.rating.toFloat()
+        val current = dish.recipes!![position]
+
+        holder.typeOfMeals.text =
+            current.mealType?.let { holder.typeOfMeals.context.getString(it.typeOfMeals) }
+        holder.titleRecipe.text = current.title
+        holder.rating.rating = current.rating!!.toFloat()
         holder.calories.text = current.calories.toString()
-        holder.timeToCook.text = current.timeForCooking.toString()
-        holder.countOfServing.text = current.numOfServings.toString()
-        holder.like.isChecked = current.isFavoriteDish
+        holder.timeToCook.text = current.timeToCook.toString()
+        holder.countOfServing.text = current.portions.toString()
+        holder.like.isChecked = current.isFavorite == true
+
+        Picasso.get()
+            .load(current.imageUr)
+            .fit()
+            .centerCrop()
+            .placeholder(R.drawable.ic_launcher_foreground)
+            .into(holder.imageView)
 
     }
 
     override fun getItemCount(): Int {
-        return dish.size
+        return dish.recipes!!.size
     }
 
     class DishViewHolder(v: View) : RecyclerView.ViewHolder(v) {
