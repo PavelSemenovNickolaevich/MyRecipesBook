@@ -5,7 +5,7 @@ import ru.android.myrecipesbook.enums.Meals
 
 data class RecipesResponse(
     val page: Int?,
-    val recipes: List<RecipeMock>?,
+    val recipes: List<RecipeMock>? = null,
     @SerializedName("page_id")
     val pageId: Int?
 )

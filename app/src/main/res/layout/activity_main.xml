@@ -19,6 +19,7 @@
     <androidx.fragment.app.FragmentContainerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@id/navigation_view"
         android:tag="fragment_container_1"
         android:id="@+id/fragment_container_view"/>
 

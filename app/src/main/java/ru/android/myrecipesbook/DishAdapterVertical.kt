@@ -22,19 +22,19 @@ class DishAdapterVertical(private val dish: RecipesResponse, listItemDish: Int) 
     }
 
     override fun onBindViewHolder(holder: DishViewHolder, position: Int) {
-        val current = dish.recipes!![position]
+        val current = dish.recipes?.let { it[position] }
 
         holder.typeOfMeals.text =
-            current.mealType?.let { holder.typeOfMeals.context.getString(it.typeOfMeals) }
-        holder.titleRecipe.text = current.title
-        holder.rating.rating = current.rating!!.toFloat()
-        holder.calories.text = current.calories.toString()
-        holder.timeToCook.text = current.timeToCook.toString()
-        holder.countOfServing.text = current.portions.toString()
-        holder.like.isChecked = current.isFavorite == true
+            current?.mealType?.let { holder.typeOfMeals.context.getString(it.typeOfMeals) }
+        holder.titleRecipe.text = current?.title
+        holder.rating.rating = current?.rating?.toFloat() ?: 1.0f
+        holder.calories.text = current?.calories.toString()
+        holder.timeToCook.text = current?.timeToCook.toString()
+        holder.countOfServing.text = current?.portions.toString()
+        holder.like.isChecked = current?.isFavorite == true
 
         Picasso.get()
-            .load(current.imageUr)
+            .load(current?.imageUr)
             .fit()
             .centerCrop()
             .placeholder(R.drawable.ic_launcher_foreground)
@@ -43,7 +43,7 @@ class DishAdapterVertical(private val dish: RecipesResponse, listItemDish: Int) 
     }
 
     override fun getItemCount(): Int {
-        return dish.recipes!!.size
+        return dish.recipes?.size ?: 0
     }
 
     class DishViewHolder(v: View) : RecyclerView.ViewHolder(v) {

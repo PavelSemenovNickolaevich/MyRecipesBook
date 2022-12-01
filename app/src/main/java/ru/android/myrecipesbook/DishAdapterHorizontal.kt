@@ -3,15 +3,19 @@ package ru.android.myrecipesbook
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatCheckBox
 import androidx.recyclerview.widget.RecyclerView
+import ru.android.myrecipesbook.entity.DishEntity
 import ru.android.myrecipesbook.model.Recipe
 
-class DishAdapterHorizontal(private val dish: List<Recipe>, listItemDish: Int) :
+
+class DishAdapterHorizontal(private val dish: List<Recipe>, listItemDish: Int, private val listener: Listener) :
     RecyclerView.Adapter<DishAdapterHorizontal.DishViewHolder>() {
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DishViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -28,7 +32,6 @@ class DishAdapterHorizontal(private val dish: List<Recipe>, listItemDish: Int) :
         internal var timeToCook: TextView = v.findViewById(R.id.time_to_cook_it)
         internal var countOfServing: TextView = v.findViewById(R.id.count_of_serving_it)
         internal var like: AppCompatCheckBox = v.findViewById(R.id.favorite_like_it)
-
     }
 
     override fun onBindViewHolder(holder: DishViewHolder, position: Int) {
@@ -41,10 +44,23 @@ class DishAdapterHorizontal(private val dish: List<Recipe>, listItemDish: Int) :
         holder.timeToCook.text = current.timeForCooking.toString()
         holder.countOfServing.text = current.numOfServings.toString()
         holder.like.isChecked = current.isFavoriteDish == true
+
+        holder.like.setOnClickListener{
+            listener.onClick(holder.like)
+            val recipeDish = DishEntity(it.id, holder.titleRecipe.text.toString())
+            listener.save(recipeDish)
+
+        }
+
     }
 
     override fun getItemCount(): Int {
         return dish.size
+    }
+
+    interface Listener{
+        fun onClick(like: CheckBox)
+        fun save(dish: DishEntity)
     }
 
 }

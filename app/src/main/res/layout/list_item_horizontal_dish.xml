@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/popular_recipes_card_view"
         android:layout_width="147dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="-20dp"
+        android:layout_marginEnd="20dp"
         app:cardBackgroundColor="@color/gray"
         app:cardCornerRadius="@dimen/cardCornerRadius_10dp">
 
@@ -31,7 +31,7 @@
                 android:layout_marginStart="@dimen/margin_mini_5dp"
                 android:text="@string/breakfast_title"
                 android:textColor="@color/blue"
-                android:textSize="@dimen/textSize_12sp" />
+                android:textSize="@dimen/textSize_10sp" />
 
             <TextView
                 android:id="@+id/rec_title_dish_it"
@@ -39,9 +39,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/type_of_meals_it"
                 android:layout_marginStart="@dimen/margin_mini_5dp"
+                android:maxLines="2"
                 android:ellipsize="end"
                 android:maxWidth="@dimen/maxWidthMainActivity_120dp"
-                android:maxLines="2"
                 android:text="@string/list_of_popular_1_title"
                 android:textColor="@color/black"
                 android:textSize="@dimen/textSize_12sp" />
@@ -50,7 +50,8 @@
                 android:id="@+id/rec_rating_it"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/rec_title_dish_it">
+                android:layout_marginTop="30dp"
+                android:layout_below="@id/type_of_meals_it">
 
                 <RatingBar
                     android:id="@+id/rec_ratingBar_it"
@@ -86,6 +87,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+
                 android:layout_below="@+id/calories_it"
                 android:orientation="horizontal">
 

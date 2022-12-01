@@ -42,8 +42,8 @@ class FavoriteFragment : Fragment() {
                 call: Call<List<RecipesResponse>>,
                 response: Response<List<RecipesResponse>>
             ) {
-                val dish = response.body()!![0]
-                recycleViewDish.adapter = DishAdapterVertical(dish, R.layout.list_item_vertical_dish)
+                val dish = response.body()?.get(0)
+                recycleViewDish.adapter = dish?.let { DishAdapterVertical(it, R.layout.list_item_vertical_dish) }
                 Log.d("",response.toString())
             }
 

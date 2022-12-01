@@ -1,7 +1,9 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
+
 
 android {
     namespace 'ru.android.myrecipesbook'
@@ -21,6 +23,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", 'BASE_URL', "\"https://61e46d241a976f00176ee4a1.mockapi.io/api/v1/\""
         }
     }
     compileOptions {
@@ -49,8 +52,14 @@ dependencies {
     implementation libraries.cardview
     implementation libraries.recyclerview
     implementation libraries.fragment
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.7.2'
-    implementation 'com.squareup.picasso:picasso:2.8'
+    implementation libraries.retrofit
+    implementation libraries.okhttp3
+    implementation libraries.picasso
+    implementation libraries.retrofitGson
+    implementation libraries.roomRuntime
+    implementation libraries.roomKtx
+    kapt libraries.roomCompiler
+
+//    androidTestImplementation"androidx.room:room-testing:$rootProject.roomVersion"
+//    implementation "androidx.room:room-rxjava2:$rootProject.roomVersion"
 }
