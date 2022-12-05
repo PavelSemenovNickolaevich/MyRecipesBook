@@ -1,26 +1,25 @@
-package ru.android.myrecipesbook
+package ru.android.myrecipesbook.ui
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import ru.android.myrecipesbook.databinding.ActivityLoginBinding
+import ru.android.myrecipesbook.databinding.ActivityReceipeDetailsBinding
 import timber.log.Timber
 
-class LoginActivity : AppCompatActivity() {
+class ReceipeDetailsActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityLoginBinding
+    private lateinit var binding: ActivityReceipeDetailsBinding
 
     fun start(context: Context) {
-        val intent = Intent(context, LoginActivity::class.java)
+        val intent = Intent(context, ReceipeDetailsActivity::class.java)
         context.startActivity(intent)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityLoginBinding.inflate(layoutInflater)
+        binding = ActivityReceipeDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         Timber.d("This is log for onCreate")
     }
-
 }

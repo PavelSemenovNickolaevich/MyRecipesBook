@@ -1,4 +1,4 @@
-package ru.android.myrecipesbook
+package ru.android.myrecipesbook.ui.fragment
 
 import android.os.Bundle
 import android.util.Log
@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResult
 import com.google.android.material.chip.ChipGroup
+import ru.android.myrecipesbook.R
 import ru.android.myrecipesbook.databinding.FragmentBottomSheetDialogBinding
 import ru.android.myrecipesbook.enums.FoodCategory
 import ru.android.myrecipesbook.enums.Meals

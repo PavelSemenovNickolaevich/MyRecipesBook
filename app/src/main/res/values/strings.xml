@@ -11,6 +11,7 @@
     <string name="search_title">Поиск</string>
     <string name="my_recipes_title">Мои рецепты</string>
     <string name="profile_title">Профиль</string>
+    <string name="favorite_from_db">Мои любимые рецепты</string>
     <!--Home 1 view page-->
 
     <!--Recipe View 1-->

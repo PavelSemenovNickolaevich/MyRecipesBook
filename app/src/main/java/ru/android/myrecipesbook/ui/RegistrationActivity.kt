@@ -1,4 +1,4 @@
-package ru.android.myrecipesbook
+package ru.android.myrecipesbook.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
+import ru.android.myrecipesbook.R
 import ru.android.myrecipesbook.databinding.ActivityRegistrationBinding
 import timber.log.Timber
 

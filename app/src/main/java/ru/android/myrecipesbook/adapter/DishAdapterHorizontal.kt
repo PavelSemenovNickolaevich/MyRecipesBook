@@ -1,4 +1,4 @@
-package ru.android.myrecipesbook
+package ru.android.myrecipesbook.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,11 +9,16 @@ import android.widget.RatingBar
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatCheckBox
 import androidx.recyclerview.widget.RecyclerView
-import ru.android.myrecipesbook.entity.DishEntity
+import ru.android.myrecipesbook.R
+import ru.android.myrecipesbook.db.entity.DishEntity
 import ru.android.myrecipesbook.model.Recipe
 
 
-class DishAdapterHorizontal(private val dish: List<Recipe>, listItemDish: Int, private val listener: Listener) :
+class DishAdapterHorizontal(
+    private val dish: List<Recipe>,
+    listItemDish: Int,
+    private val listener: Listener
+) :
     RecyclerView.Adapter<DishAdapterHorizontal.DishViewHolder>() {
 
 
@@ -37,30 +42,40 @@ class DishAdapterHorizontal(private val dish: List<Recipe>, listItemDish: Int, p
     override fun onBindViewHolder(holder: DishViewHolder, position: Int) {
         val current = dish[position]
         current.resourceLinkImage?.let { holder.imageView.setImageResource(it) }
-        holder.typeOfMeals.text = current.meals?.let { holder.typeOfMeals.context.getString(it.typeOfMeals) }
+        holder.typeOfMeals.text =
+            current.meals?.let { holder.typeOfMeals.context.getString(it.typeOfMeals) }
         holder.titleRecipe.text = current.name
         holder.rating.rating = current.rating!!.toFloat()
         holder.calories.text = current.calories.toString()
         holder.timeToCook.text = current.timeForCooking.toString()
         holder.countOfServing.text = current.numOfServings.toString()
-        holder.like.isChecked = current.isFavoriteDish == true
+        holder.like.isChecked = current.isFavoriteDish == false
 
-        holder.like.setOnClickListener{
-            listener.onClick(holder.like)
-            val recipeDish = DishEntity(it.id, holder.titleRecipe.text.toString())
-            listener.save(recipeDish)
+        holder.like.setOnClickListener {
+            listener.onClickFavoriteDishCheckBox(holder.like, holder.titleRecipe.text.toString())
 
+            if (holder.like.isChecked) {
+                val recipeDish = DishEntity(
+                    null, holder.titleRecipe.text.toString(),
+                    holder.rating.rating,
+                    holder.calories.text.toString(),
+                    holder.like.isChecked
+                )
+                listener.saveFavoriteDish(recipeDish)
+            } else {
+                listener.deleteFavoriteDish(holder.titleRecipe.text.toString())
+            }
         }
-
     }
 
     override fun getItemCount(): Int {
         return dish.size
     }
 
-    interface Listener{
-        fun onClick(like: CheckBox)
-        fun save(dish: DishEntity)
+    interface Listener {
+        fun onClickFavoriteDishCheckBox(like: CheckBox, dishName: String)
+        fun saveFavoriteDish(dish: DishEntity)
+        fun deleteFavoriteDish(dishName: String)
     }
 
 }

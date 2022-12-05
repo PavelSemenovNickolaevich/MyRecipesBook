@@ -1,4 +1,4 @@
-package ru.android.myrecipesbook
+package ru.android.myrecipesbook.ui
 
 import android.content.Context
 import android.content.Intent
@@ -6,7 +6,12 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationBarView
+import ru.android.myrecipesbook.*
 import ru.android.myrecipesbook.databinding.ActivityMainBinding
+import ru.android.myrecipesbook.ui.fragment.FavoriteFragment
+import ru.android.myrecipesbook.ui.fragment.FavoriteFromDBFragment
+import ru.android.myrecipesbook.ui.fragment.ProfileFragment
+import ru.android.myrecipesbook.ui.fragment.SearchFragment
 import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
@@ -44,6 +49,10 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.profile_fragment -> {
                     loadFragment(ProfileFragment())
+                    true
+                }
+                R.id.favorite_from_db_fragment -> {
+                    loadFragment(FavoriteFromDBFragment())
                     true
                 }
                 else -> false

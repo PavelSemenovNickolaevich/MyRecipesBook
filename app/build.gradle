@@ -16,6 +16,12 @@ android {
         versionCode versions.versionCode
         versionName "1.0"
 
+        kapt {
+            arguments {
+                arg("room.schemaLocation", "$projectDir/schemas")
+            }
+        }
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -23,7 +29,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", 'BASE_URL', "\"https://61e46d241a976f00176ee4a1.mockapi.io/api/v1/\""
+            buildConfigField "String", "BASE_URL", "https://61e46d241a976f00176ee4a1.mockapi.io/api/v1/"
         }
     }
     compileOptions {
@@ -59,6 +65,7 @@ dependencies {
     implementation libraries.roomRuntime
     implementation libraries.roomKtx
     kapt libraries.roomCompiler
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
 
 //    androidTestImplementation"androidx.room:room-testing:$rootProject.roomVersion"
 //    implementation "androidx.room:room-rxjava2:$rootProject.roomVersion"

@@ -2,15 +2,16 @@ package ru.android.myrecipesbook
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
-import ru.android.myrecipesbook.FakeFoodRepository.getFilterListByCalories
-import ru.android.myrecipesbook.FakeFoodRepository.getFilterListByMeals
-import ru.android.myrecipesbook.FakeFoodRepository.getFilterRecipesByTime
-import ru.android.myrecipesbook.FakeFoodRepository.getListOfDishes
-import ru.android.myrecipesbook.FakeFoodRepository.orderByRates
+import ru.android.myrecipesbook.repository.FakeFoodRepository.getFilterListByCalories
+import ru.android.myrecipesbook.repository.FakeFoodRepository.getFilterListByMeals
+import ru.android.myrecipesbook.repository.FakeFoodRepository.getFilterRecipesByTime
+import ru.android.myrecipesbook.repository.FakeFoodRepository.getListOfDishes
+import ru.android.myrecipesbook.repository.FakeFoodRepository.orderByRates
 import ru.android.myrecipesbook.enums.FoodCategory
 import ru.android.myrecipesbook.enums.Ingredients
 import ru.android.myrecipesbook.enums.Meals
 import ru.android.myrecipesbook.model.Recipe
+import ru.android.myrecipesbook.utils.FoodUtils
 
 /**
  * Example local unit test, which will execute on the development machine (host).

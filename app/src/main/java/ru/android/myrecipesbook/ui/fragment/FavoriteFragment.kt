@@ -1,4 +1,4 @@
-package ru.android.myrecipesbook
+package ru.android.myrecipesbook.ui.fragment
 
 import android.content.ContentValues.TAG
 import android.os.Bundle
@@ -10,8 +10,12 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import retrofit2.Call
 import retrofit2.Response
+import ru.android.myrecipesbook.R
+import ru.android.myrecipesbook.RecipeApiClient
+import ru.android.myrecipesbook.adapter.DishAdapterVertical
 import ru.android.myrecipesbook.databinding.FragmentFavoriteBinding
 import ru.android.myrecipesbook.model.RecipesResponse
+import ru.android.myrecipesbook.repository.FakeFoodRepository
 import timber.log.Timber
 
 
@@ -43,12 +47,17 @@ class FavoriteFragment : Fragment() {
                 response: Response<List<RecipesResponse>>
             ) {
                 val dish = response.body()?.get(0)
-                recycleViewDish.adapter = dish?.let { DishAdapterVertical(it, R.layout.list_item_vertical_dish) }
-                Log.d("",response.toString())
+                recycleViewDish.adapter = dish?.let {
+                    DishAdapterVertical(
+                        it,
+                        R.layout.list_item_vertical_dish
+                    )
+                }
+                Log.d("", response.toString())
             }
 
             override fun onFailure(call: Call<List<RecipesResponse>>, t: Throwable) {
-               Log.e(TAG, t.toString())
+                Log.e(TAG, t.toString())
             }
 
         })

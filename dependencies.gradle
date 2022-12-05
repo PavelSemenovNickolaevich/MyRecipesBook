@@ -20,9 +20,9 @@ ext.versions = [
         retrofit              : '2.9.0',
         picasso               : '2.8',
         retrofitGson          : '2.9.0',
-        roomRuntime           : '2.3.0',
-        roomKtx               : '2.3.0',
-        roomCompiler          : '2.3.0'
+        roomRuntime           : '2.4.0-alpha04',
+        roomKtx               : '2.4.0-alpha04',
+        roomCompiler          : '2.4.0-alpha04'
 ]
 
 ext.libraries = [
