@@ -22,7 +22,8 @@ ext.versions = [
         retrofitGson          : '2.9.0',
         roomRuntime           : '2.4.0-alpha04',
         roomKtx               : '2.4.0-alpha04',
-        roomCompiler          : '2.4.0-alpha04'
+        roomCompiler          : '2.4.0-alpha04',
+        livedata              : '2.5.1'
 ]
 
 ext.libraries = [
@@ -45,6 +46,7 @@ ext.libraries = [
         picasso: "com.squareup.picasso:picasso:$versions.picasso",
         roomRuntime: "androidx.room:room-runtime:$versions.roomRuntime",
         roomKtx: "androidx.room:room-ktx:$versions.roomKtx",
-        roomCompiler: "androidx.room:room-compiler:$versions.roomCompiler"
+        roomCompiler: "androidx.room:room-compiler:$versions.roomCompiler",
+        livedata: "androidx.lifecycle:lifecycle-livedata-ktx:$versions.livedata"
 
 ]
