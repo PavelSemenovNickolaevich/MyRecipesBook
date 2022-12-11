@@ -29,7 +29,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "BASE_URL", "https://61e46d241a976f00176ee4a1.mockapi.io/api/v1/"
+            buildConfigField "String", 'BASE_URL', "https://61e46d241a976f00176ee4a1.mockapi.io/api/v1/"
         }
     }
     compileOptions {

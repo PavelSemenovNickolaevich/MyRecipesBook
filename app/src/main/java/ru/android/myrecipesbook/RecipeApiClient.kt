@@ -4,6 +4,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import ru.android.myrecipesbook.RecipeApiClient.BASE_URL
 import ru.android.myrecipesbook.`interface`.RecipeApiInterface
 
 object RecipeApiClient {
@@ -19,7 +20,7 @@ object RecipeApiClient {
     val apiClient: RecipeApiInterface by lazy {
 
         val retrofit: Retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(BuildConfig.BASE_URL)
             .client(client)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
