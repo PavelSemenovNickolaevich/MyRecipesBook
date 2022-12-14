@@ -23,10 +23,13 @@ ext.versions = [
         roomRuntime           : '2.4.0-alpha04',
         roomKtx               : '2.4.0-alpha04',
         roomCompiler          : '2.4.0-alpha04',
-        livedata              : '2.5.1'
+        livedata              : '2.5.1',
+        coroutinesCore        : '1.6.1',
+        coroutinesAndroid     : '1.6.1'
 ]
 
 ext.libraries = [
+
         coreKtx : "androidx.core:core-ktx:$versions.coreKtx",
         appcompat : "androidx.appcompat:appcompat:$versions.appcompat",
         material : "com.google.android.material:material:$versions.material",
@@ -47,6 +50,8 @@ ext.libraries = [
         roomRuntime: "androidx.room:room-runtime:$versions.roomRuntime",
         roomKtx: "androidx.room:room-ktx:$versions.roomKtx",
         roomCompiler: "androidx.room:room-compiler:$versions.roomCompiler",
-        livedata: "androidx.lifecycle:lifecycle-livedata-ktx:$versions.livedata"
+        livedata: "androidx.lifecycle:lifecycle-livedata-ktx:$versions.livedata",
+        coroutinesCore: "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutinesCore",
+        coroutinesAndroid: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutinesAndroid"
 
 ]

@@ -1,6 +1,5 @@
 package ru.android.myrecipesbook.ui.fragment
 
-import android.content.ContentValues
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,32 +9,31 @@ import android.widget.CheckBox
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import retrofit2.Call
-import retrofit2.Response
 import ru.android.myrecipesbook.R
-import ru.android.myrecipesbook.RecipeApiClient
-import ru.android.myrecipesbook.adapter.DishAdapterEntityVertical
 import ru.android.myrecipesbook.adapter.DishAdapterHorizontal
 import ru.android.myrecipesbook.adapter.DishAdapterVertical
 import ru.android.myrecipesbook.databinding.FragmentSearchBinding
 import ru.android.myrecipesbook.db.entity.DishEntity
-import ru.android.myrecipesbook.model.RecipesResponse
 import ru.android.myrecipesbook.repository.DishRepository
 import ru.android.myrecipesbook.repository.FakeFoodRepository
+import ru.android.myrecipesbook.ui.viewmodel.SearchViewModel
 import timber.log.Timber
 
 class SearchFragment : Fragment(), DishAdapterHorizontal.Listener {
 
     private lateinit var binding: FragmentSearchBinding
     private val fakeFoodRepository = FakeFoodRepository
+    private lateinit var searhViewModelVertical: SearchViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-
+        searhViewModelVertical = ViewModelProvider(this)[SearchViewModel::class.java]
         binding = FragmentSearchBinding.inflate(inflater, container, false)
         val root = binding.root
         val filtersBtn: ImageButton = binding.filterBtn
@@ -58,25 +56,53 @@ class SearchFragment : Fragment(), DishAdapterHorizontal.Listener {
 //                DishAdapterHorizontal(dishFromDb, R.layout.list_item_vertical_dish, this)
 //        }
 
-        val getRecipes = RecipeApiClient.apiClient.getAllRecipes()
+        Timber.d("This is log for on Create FavoriteFragment")
 
-        getRecipes.enqueue(object : retrofit2.Callback<List<RecipesResponse>> {
+        val recycleViewDish = binding.recycleDishVertical
+        recycleViewDish.layoutManager = LinearLayoutManager(activity)
 
-            override fun onResponse(
-                call: Call<List<RecipesResponse>>,
-                response: Response<List<RecipesResponse>>
-            ) {
-                val dish = response.body()?.get(0)
-                recycleViewDishVertical.adapter =
-                    dish?.let { DishAdapterVertical(it, R.layout.list_item_vertical_dish) }
-                Log.d("", response.toString())
+
+        searhViewModelVertical.favoriteLiveDataPublicField.observe(
+            this.viewLifecycleOwner,
+            Observer {
+
+                recycleViewDish.adapter =
+                    searhViewModelVertical.favoriteLiveDataPublicField.value?.let {
+                        DishAdapterVertical(
+                            it,
+                            R.layout.list_item_vertical_dish
+                        )
+                    }
             }
+        )
 
-            override fun onFailure(call: Call<List<RecipesResponse>>, t: Throwable) {
-                Log.e(ContentValues.TAG, t.toString())
-            }
+        searhViewModelVertical.errorLiveDataPublicField.observe(
+            this.viewLifecycleOwner,
+            Observer<String> { error ->
+                Toast.makeText(context, error, Toast.LENGTH_SHORT).show()
+            })
 
-        })
+        //Оставил специально
+//        val getRecipes = RecipeApiClient.apiClient.getAllRecipes()
+//
+//
+//        getRecipes.enqueue(object : retrofit2.Callback<List<RecipesResponse>> {
+//
+//            override fun onResponse(
+//                call: Call<List<RecipesResponse>>,
+//                response: Response<List<RecipesResponse>>
+//            ) {
+//                val dish = response.body()?.get(0)
+//                recycleViewDishVertical.adapter =
+//                    dish?.let { DishAdapterVertical(it, R.layout.list_item_vertical_dish) }
+//                Log.d("", response.toString())
+//            }
+//
+//            override fun onFailure(call: Call<List<RecipesResponse>>, t: Throwable) {
+//                Log.e(ContentValues.TAG, t.toString())
+//            }
+//
+//        })
 
         filtersBtn.setOnClickListener {
             val addBottomFragment: BottomSheetDialogFragment =

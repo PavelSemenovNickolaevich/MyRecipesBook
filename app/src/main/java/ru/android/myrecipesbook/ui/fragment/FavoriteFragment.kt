@@ -38,9 +38,9 @@ class FavoriteFragment : Fragment() {
         recycleViewDish.layoutManager = LinearLayoutManager(activity)
 
 
-        favoriteViewModel.favoriteLiveData.observe(this.viewLifecycleOwner, Observer {
+        favoriteViewModel.favoriteLiveDataPublicField.observe(this.viewLifecycleOwner, Observer {
 
-            recycleViewDish.adapter = favoriteViewModel.favoriteLiveData.value?.let {
+            recycleViewDish.adapter = favoriteViewModel.favoriteLiveDataPublicField.value?.let {
                 DishAdapterVertical(
                     it,
                     R.layout.list_item_vertical_dish
@@ -49,7 +49,7 @@ class FavoriteFragment : Fragment() {
         }
         )
 
-        favoriteViewModel.errorLiveData.observe(this.viewLifecycleOwner, Observer<String> { error ->
+        favoriteViewModel.errorLiveDataPublicField.observe(this.viewLifecycleOwner, Observer<String> { error ->
             Toast.makeText(context, error, Toast.LENGTH_SHORT).show()
         })
 

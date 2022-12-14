@@ -8,7 +8,7 @@ import kotlinx.coroutines.launch
 import ru.android.myrecipesbook.RecipeApiClient
 import ru.android.myrecipesbook.model.RecipesResponse
 
-class FavoriteViewModel : ViewModel() {
+class SearchViewModel : ViewModel() {
 
     private val favoriteLiveData = MutableLiveData<RecipesResponse>()
     private val errorLiveData = MutableLiveData<String>()
@@ -20,7 +20,6 @@ class FavoriteViewModel : ViewModel() {
         getRecipeFromNetwork()
     }
 
-
     private fun getRecipeFromNetwork() {
 
         viewModelScope.launch {
@@ -31,27 +30,6 @@ class FavoriteViewModel : ViewModel() {
             } catch (e: java.lang.Exception) {
                 errorLiveData.value = "Error"
             }
-
-            //Оставил специально
-//            val getRecipes = RecipeApiClient.apiClient.getAllRecipes()
-
-//            getRecipes.enqueue(object : retrofit2.Callback<List<RecipesResponse>> {
-
-//                override fun onResponse(
-//                    call: Call<List<RecipesResponse>>,
-//                    response: Response<List<RecipesResponse>>
-//                ) {
-//                    favoriteLiveData.value = response.body()?.get(0)
-            //   favoriteLiveData.value = getRecipes[0]
-//            favoriteLiveData.value = getRecipes
-//
-//                }
-
-//                override fun onFailure(call: Call<List<RecipesResponse>>, t: Throwable) {
-//                    errorLiveData.postValue("Oшибка")
-//                    Timber.tag(ContentValues.TAG).e(t.toString())
-//                }
-//            })
         }
     }
 }
