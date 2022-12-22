@@ -4,20 +4,23 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import ru.android.myrecipesbook.R
+import ru.android.myrecipesbook.adapter.DishAdapterEntityVertical
 import ru.android.myrecipesbook.adapter.DishAdapterVertical
 import ru.android.myrecipesbook.databinding.FragmentFavoriteBinding
+import ru.android.myrecipesbook.db.entity.DishEntity
 import ru.android.myrecipesbook.repository.FakeFoodRepository
 import ru.android.myrecipesbook.ui.viewmodel.FavoriteViewModel
 import timber.log.Timber
 
 
-class FavoriteFragment : Fragment() {
+class FavoriteFragment : Fragment(), DishAdapterVertical.Listener {
 
     private lateinit var favoriteViewModel: FavoriteViewModel
     private lateinit var binding: FragmentFavoriteBinding
@@ -43,7 +46,8 @@ class FavoriteFragment : Fragment() {
             recycleViewDish.adapter = favoriteViewModel.favoriteLiveDataPublicField.value?.let {
                 DishAdapterVertical(
                     it,
-                    R.layout.list_item_vertical_dish
+                    R.layout.list_item_vertical_dish,
+                    this
                 )
             }
         }
@@ -54,5 +58,17 @@ class FavoriteFragment : Fragment() {
         })
 
         return root
+    }
+
+    override fun onClickFavoriteDishCheckBox(like: CheckBox, dishName: String) {
+//        TODO("Not yet implemented")
+    }
+
+    override suspend fun saveFavoriteDish(dish: DishEntity) {
+//        TODO("Not yet implemented")
+    }
+
+    override fun deleteFavoriteDish(dishName: String) {
+//        TODO("Not yet implemented")
     }
 }

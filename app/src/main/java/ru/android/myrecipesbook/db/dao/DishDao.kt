@@ -1,15 +1,17 @@
 package ru.android.myrecipesbook.db.dao
 
 
+import androidx.room.Dao
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import ru.android.myrecipesbook.db.entity.DishEntity
 
-@androidx.room.Dao
+@Dao
 interface DishDao {
 
-    @Insert
-    fun saveFavoriteDish(dish: DishEntity)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun saveFavoriteDish(dish: DishEntity)
 
     @Query("SELECT * FROM  dish")
     fun getFavoriteDish(): List<DishEntity>

@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import ru.android.myrecipesbook.R
 import ru.android.myrecipesbook.adapter.DishAdapterHorizontal
@@ -22,7 +23,7 @@ import ru.android.myrecipesbook.repository.FakeFoodRepository
 import ru.android.myrecipesbook.ui.viewmodel.SearchViewModel
 import timber.log.Timber
 
-class SearchFragment : Fragment(), DishAdapterHorizontal.Listener {
+class SearchFragment : Fragment(), DishAdapterHorizontal.Listener, DishAdapterVertical.Listener {
 
     private lateinit var binding: FragmentSearchBinding
     private val fakeFoodRepository = FakeFoodRepository
@@ -70,7 +71,8 @@ class SearchFragment : Fragment(), DishAdapterHorizontal.Listener {
                     searhViewModelVertical.favoriteLiveDataPublicField.value?.let {
                         DishAdapterVertical(
                             it,
-                            R.layout.list_item_vertical_dish
+                            R.layout.list_item_vertical_dish,
+                            this
                         )
                     }
             }
@@ -127,6 +129,8 @@ class SearchFragment : Fragment(), DishAdapterHorizontal.Listener {
 //            val intent = Intent(context, ReceipeDetailsActivity::class.java)
 //            startActivity(intent)
 //        }
+
+
         return root
     }
 
@@ -146,8 +150,10 @@ class SearchFragment : Fragment(), DishAdapterHorizontal.Listener {
         }
     }
 
-    override fun saveFavoriteDish(dish: DishEntity) {
-        val db = context?.let { DishRepository(it) }
+
+
+     override suspend fun saveFavoriteDish(dish: DishEntity){
+         val db = context?.let { DishRepository(it) }
         db?.saveFavoriteDish(dish)
     }
 

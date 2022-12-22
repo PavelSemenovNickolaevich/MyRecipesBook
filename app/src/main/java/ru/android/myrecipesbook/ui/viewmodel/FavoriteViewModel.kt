@@ -27,6 +27,7 @@ class FavoriteViewModel : ViewModel() {
 
             try {
                 val getRecipes = RecipeApiClient.apiClient.getAllRecipes()
+                if(getRecipes.isNullOrEmpty()) throw Exception("List is Empty")
                 favoriteLiveData.value = getRecipes[0]
             } catch (e: java.lang.Exception) {
                 errorLiveData.value = "Error"

@@ -56,12 +56,20 @@ class FavoriteFromDBFragment : Fragment(), DishAdapterEntityVertical.Listener {
     }
 
     override fun saveFavoriteDish(dish: DishEntity) {
-        val db = context?.let { DishRepository(it) }
-        db?.saveFavoriteDish(dish)
+//        TODO("Not yet implemented")
     }
 
     override fun deleteFavoriteDish(dishName: String) {
-        val db = context?.let { DishRepository(it) }
-        db?.deleteFavoriteDish(dishName)
+//        TODO("Not yet implemented")
     }
+
+//    override fun saveFavoriteDish(dish: DishEntity) {
+//        val db = context?.let { DishRepository(it) }
+//        db?.saveFavoriteDish(dish)
+//    }
+//
+//    override fun deleteFavoriteDish(dishName: String) {
+//        val db = context?.let { DishRepository(it) }
+//        db?.deleteFavoriteDish(dishName)
+//    }
 }

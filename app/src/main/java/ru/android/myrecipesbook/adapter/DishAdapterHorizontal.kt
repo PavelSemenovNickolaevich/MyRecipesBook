@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.android.myrecipesbook.R
 import ru.android.myrecipesbook.db.entity.DishEntity
 import ru.android.myrecipesbook.model.Recipe
+import ru.android.myrecipesbook.ui.viewmodel.SearchViewModel
 
 
 class DishAdapterHorizontal(
@@ -21,6 +22,7 @@ class DishAdapterHorizontal(
 ) :
     RecyclerView.Adapter<DishAdapterHorizontal.DishViewHolder>() {
 
+    private lateinit var searhViewModelVertical: SearchViewModel
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DishViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -61,7 +63,7 @@ class DishAdapterHorizontal(
                     holder.calories.text.toString(),
                     holder.like.isChecked
                 )
-                listener.saveFavoriteDish(recipeDish)
+                searhViewModelVertical.saveFavoriteDish(recipeDish)
             } else {
                 listener.deleteFavoriteDish(holder.titleRecipe.text.toString())
             }
@@ -74,7 +76,7 @@ class DishAdapterHorizontal(
 
     interface Listener {
         fun onClickFavoriteDishCheckBox(like: CheckBox, dishName: String)
-        fun saveFavoriteDish(dish: DishEntity)
+        suspend fun saveFavoriteDish(dish: DishEntity)
         fun deleteFavoriteDish(dishName: String)
     }
 

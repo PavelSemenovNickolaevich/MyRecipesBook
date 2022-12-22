@@ -9,7 +9,7 @@ class DishRepository(context: Context) {
 
     private var db: DishDao = RecipesDatabase.getDatabase(context)?.dishes()!!
 
-    fun saveFavoriteDish(dish: DishEntity) {
+    suspend fun saveFavoriteDish(dish: DishEntity) {
         db.saveFavoriteDish(dish)
     }
 

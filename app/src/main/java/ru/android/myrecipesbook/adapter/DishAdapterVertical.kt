@@ -3,18 +3,29 @@ package ru.android.myrecipesbook.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatCheckBox
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import ru.android.myrecipesbook.R
+import ru.android.myrecipesbook.db.entity.DishEntity
 import ru.android.myrecipesbook.model.RecipesResponse
+import ru.android.myrecipesbook.ui.fragment.SearchFragment
+import ru.android.myrecipesbook.ui.viewmodel.SearchViewModel
 
 
-class DishAdapterVertical(private val dish: RecipesResponse, listItemDish: Int) :
+class DishAdapterVertical(
+    private val dish: RecipesResponse,
+    listItemDish: Int,
+    private val listener: Listener
+) :
     RecyclerView.Adapter<DishAdapterVertical.DishViewHolder>() {
+
+    private lateinit var searhViewModelVertical: SearchViewModel
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DishViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -41,6 +52,22 @@ class DishAdapterVertical(private val dish: RecipesResponse, listItemDish: Int) 
             .placeholder(R.drawable.ic_launcher_foreground)
             .into(holder.imageView)
 
+        holder.like.setOnClickListener {
+            listener.onClickFavoriteDishCheckBox(holder.like, holder.titleRecipe.text.toString())
+
+            if (holder.like.isChecked) {
+                val recipeDish = DishEntity(
+                    null, holder.titleRecipe.text.toString(),
+                    holder.rating.rating,
+                    holder.calories.text.toString(),
+                    holder.like.isChecked
+                )
+                searhViewModelVertical.saveFavoriteDish(recipeDish)
+            } else {
+                listener.deleteFavoriteDish(holder.titleRecipe.text.toString())
+            }
+        }
+
     }
 
     override fun getItemCount(): Int {
@@ -58,4 +85,13 @@ class DishAdapterVertical(private val dish: RecipesResponse, listItemDish: Int) 
         internal var like: AppCompatCheckBox = v.findViewById(R.id.favorite_like_it)
 
     }
+
+
+    interface Listener {
+        fun onClickFavoriteDishCheckBox(like: CheckBox, dishName: String)
+        suspend fun saveFavoriteDish(dish: DishEntity)
+        fun deleteFavoriteDish(dishName: String)
+    }
+
 }
+
