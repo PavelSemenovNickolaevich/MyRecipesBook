@@ -11,16 +11,18 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import ru.android.myrecipesbook.R
 import ru.android.myrecipesbook.adapter.DishAdapterHorizontal
 import ru.android.myrecipesbook.adapter.DishAdapterVertical
+import ru.android.myrecipesbook.databinding.FragmentFavoriteFromDBBinding
 import ru.android.myrecipesbook.databinding.FragmentSearchBinding
 import ru.android.myrecipesbook.db.entity.DishEntity
 import ru.android.myrecipesbook.repository.DishRepository
 import ru.android.myrecipesbook.repository.FakeFoodRepository
+import ru.android.myrecipesbook.ui.viewmodel.FavoriteViewModelDB
 import ru.android.myrecipesbook.ui.viewmodel.SearchViewModel
+import ru.android.myrecipesbook.utils.SearchViewModelFactory
 import timber.log.Timber
 
 class SearchFragment : Fragment(), DishAdapterHorizontal.Listener, DishAdapterVertical.Listener {
@@ -34,7 +36,11 @@ class SearchFragment : Fragment(), DishAdapterHorizontal.Listener, DishAdapterVe
         savedInstanceState: Bundle?
     ): View? {
 
-        searhViewModelVertical = ViewModelProvider(this)[SearchViewModel::class.java]
+        val viewModelFactory = SearchViewModelFactory(
+            requireActivity().application
+        )
+        searhViewModelVertical =
+            ViewModelProvider(this, viewModelFactory).get(SearchViewModel::class.java)
         binding = FragmentSearchBinding.inflate(inflater, container, false)
         val root = binding.root
         val filtersBtn: ImageButton = binding.filterBtn
@@ -51,11 +57,12 @@ class SearchFragment : Fragment(), DishAdapterHorizontal.Listener, DishAdapterVe
         recycleViewDishHorizontal.adapter =
             DishAdapterHorizontal(dish, R.layout.list_item_horizontal_dish, this)
 
-        val dishFromDb = context?.let { DishRepository(it) }?.getFavoriteDishByLike()
+//        val dishFromDb = context?.let { DishRepository(it) }?.getFavoriteDishByLike()
 //        if (dishFromDb != null) {
 //            recycleViewDishHorizontal.adapter =
 //                DishAdapterHorizontal(dishFromDb, R.layout.list_item_vertical_dish, this)
 //        }
+        searhViewModelVertical.getFavoriteDishFromDBByLike()
 
         Timber.d("This is log for on Create FavoriteFragment")
 
@@ -134,14 +141,16 @@ class SearchFragment : Fragment(), DishAdapterHorizontal.Listener, DishAdapterVe
         return root
     }
 
-    override fun onClickFavoriteDishCheckBox(like: CheckBox, dishName: String) {
+    override fun onClickFavoriteDishCheckBox(like: CheckBox, dishName: String, dish: DishEntity) {
         if (like.isChecked) {
+            searhViewModelVertical.saveFavoriteDish(dish)
             Toast.makeText(
                 context,
                 "\"$dishName\" был сохранен в любимых рецептах",
                 Toast.LENGTH_LONG
             ).show()
         } else {
+            searhViewModelVertical.deleteFavoriteDish(dishName)
             Toast.makeText(
                 context,
                 "\"$dishName\" был удален из любимых рецептов",
@@ -151,13 +160,12 @@ class SearchFragment : Fragment(), DishAdapterHorizontal.Listener, DishAdapterVe
     }
 
 
-
-     override suspend fun saveFavoriteDish(dish: DishEntity){
-         val db = context?.let { DishRepository(it) }
+    override suspend fun saveFavoriteDish(dish: DishEntity) {
+        val db = context?.let { DishRepository(it) }
         db?.saveFavoriteDish(dish)
     }
 
-    override fun deleteFavoriteDish(dishName: String) {
+    override suspend fun deleteFavoriteDish(dishName: String) {
         val db = context?.let { DishRepository(it) }
         db?.deleteFavoriteDish(dishName)
     }

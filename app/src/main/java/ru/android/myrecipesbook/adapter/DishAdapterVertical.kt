@@ -8,14 +8,11 @@ import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatCheckBox
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import ru.android.myrecipesbook.R
 import ru.android.myrecipesbook.db.entity.DishEntity
 import ru.android.myrecipesbook.model.RecipesResponse
-import ru.android.myrecipesbook.ui.fragment.SearchFragment
-import ru.android.myrecipesbook.ui.viewmodel.SearchViewModel
 
 
 class DishAdapterVertical(
@@ -24,8 +21,6 @@ class DishAdapterVertical(
     private val listener: Listener
 ) :
     RecyclerView.Adapter<DishAdapterVertical.DishViewHolder>() {
-
-    private lateinit var searhViewModelVertical: SearchViewModel
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DishViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -49,23 +44,29 @@ class DishAdapterVertical(
             .load(current?.imageUr)
             .fit()
             .centerCrop()
-            .placeholder(R.drawable.ic_launcher_foreground)
             .into(holder.imageView)
 
         holder.like.setOnClickListener {
-            listener.onClickFavoriteDishCheckBox(holder.like, holder.titleRecipe.text.toString())
-
-            if (holder.like.isChecked) {
-                val recipeDish = DishEntity(
+            listener.onClickFavoriteDishCheckBox(
+                holder.like, holder.titleRecipe.text.toString(), DishEntity(
                     null, holder.titleRecipe.text.toString(),
                     holder.rating.rating,
                     holder.calories.text.toString(),
                     holder.like.isChecked
                 )
-                searhViewModelVertical.saveFavoriteDish(recipeDish)
-            } else {
-                listener.deleteFavoriteDish(holder.titleRecipe.text.toString())
-            }
+            )
+//
+//            if (holder.like.isChecked) {
+//                val recipeDish = DishEntity(
+//                    null, holder.titleRecipe.text.toString(),
+//                    holder.rating.rating,
+//                    holder.calories.text.toString(),
+//                    holder.like.isChecked
+//                )
+////                listener.saveFavoriteDish(recipeDish)
+//            } else {
+//                listener.deleteFavoriteDish(holder.titleRecipe.text.toString())
+//            }
         }
 
     }
@@ -88,9 +89,9 @@ class DishAdapterVertical(
 
 
     interface Listener {
-        fun onClickFavoriteDishCheckBox(like: CheckBox, dishName: String)
+        fun onClickFavoriteDishCheckBox(like: CheckBox, dishName: String, dish: DishEntity)
         suspend fun saveFavoriteDish(dish: DishEntity)
-        fun deleteFavoriteDish(dishName: String)
+        suspend fun deleteFavoriteDish(dishName: String)
     }
 
 }

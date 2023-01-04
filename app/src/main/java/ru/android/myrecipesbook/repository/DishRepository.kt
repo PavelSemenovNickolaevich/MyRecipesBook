@@ -13,15 +13,15 @@ class DishRepository(context: Context) {
         db.saveFavoriteDish(dish)
     }
 
-    fun deleteFavoriteDish(dishName: String) {
+    suspend fun deleteFavoriteDish(dishName: String) {
         db.deleteFavoriteDish(dishName)
     }
 
-    fun getFavoriteDish(): List<DishEntity> {
+    suspend fun getFavoriteDishRepo(): List<DishEntity> {
         return db.getFavoriteDish()
     }
 
-    fun getFavoriteDishByLike(): List<DishEntity> {
+     suspend fun getFavoriteDishByLike(): List<DishEntity> {
         return db.getFavoriteDishByLike()
     }
 

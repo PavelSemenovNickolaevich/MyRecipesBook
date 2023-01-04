@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.android.myrecipesbook.R
 import ru.android.myrecipesbook.db.entity.DishEntity
 import ru.android.myrecipesbook.model.Recipe
-import ru.android.myrecipesbook.ui.viewmodel.SearchViewModel
 
 
 class DishAdapterHorizontal(
@@ -21,8 +20,6 @@ class DishAdapterHorizontal(
     private val listener: Listener
 ) :
     RecyclerView.Adapter<DishAdapterHorizontal.DishViewHolder>() {
-
-    private lateinit var searhViewModelVertical: SearchViewModel
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DishViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -54,20 +51,18 @@ class DishAdapterHorizontal(
         holder.like.isChecked = current.isFavoriteDish == false
 
         holder.like.setOnClickListener {
-            listener.onClickFavoriteDishCheckBox(holder.like, holder.titleRecipe.text.toString())
-
-            if (holder.like.isChecked) {
-                val recipeDish = DishEntity(
+            listener.onClickFavoriteDishCheckBox(
+                holder.like,
+                holder.titleRecipe.text.toString(),
+                DishEntity(
                     null, holder.titleRecipe.text.toString(),
                     holder.rating.rating,
                     holder.calories.text.toString(),
                     holder.like.isChecked
                 )
-                searhViewModelVertical.saveFavoriteDish(recipeDish)
-            } else {
-                listener.deleteFavoriteDish(holder.titleRecipe.text.toString())
-            }
+            )
         }
+
     }
 
     override fun getItemCount(): Int {
@@ -75,9 +70,9 @@ class DishAdapterHorizontal(
     }
 
     interface Listener {
-        fun onClickFavoriteDishCheckBox(like: CheckBox, dishName: String)
+        fun onClickFavoriteDishCheckBox(like: CheckBox, dishName: String, dish: DishEntity)
         suspend fun saveFavoriteDish(dish: DishEntity)
-        fun deleteFavoriteDish(dishName: String)
+        suspend fun deleteFavoriteDish(dishName: String)
     }
 
 }

@@ -18,7 +18,7 @@ data class Recipe(
     @SerializedName("steps")
     val stepsOfCooking: List<String>?,
     @SerializedName("favorite")
-    val isFavoriteDish: Boolean?,
+    val isFavoriteDish: Boolean,
     @androidx.annotation.IntRange(from = 1, to = 5) val rating: Int?,
     @SerializedName("resource_link_image")
     @DrawableRes val resourceLinkImage: Int?,

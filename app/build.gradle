@@ -49,6 +49,8 @@ android {
 
 dependencies {
 
+    def room_version = "2.4.3"
+
     implementation libraries.coreKtx
     implementation libraries.appcompat
     implementation libraries.material
@@ -71,6 +73,12 @@ dependencies {
     implementation libraries.livedata
     implementation libraries.coroutinesCore
     implementation libraries.coroutinesAndroid
+
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+
 
 //    androidTestImplementation"androidx.room:room-testing:$rootProject.roomVersion"
 //    implementation "androidx.room:room-rxjava2:$rootProject.roomVersion"

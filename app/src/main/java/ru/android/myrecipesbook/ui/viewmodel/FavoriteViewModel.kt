@@ -33,6 +33,7 @@ class FavoriteViewModel : ViewModel() {
                 errorLiveData.value = "Error"
             }
 
+
             //Оставил специально
 //            val getRecipes = RecipeApiClient.apiClient.getAllRecipes()
 

@@ -63,26 +63,22 @@ class DishAdapterEntityVertical(
 //            .into(holder.imageView)
 
         holder.like.setOnClickListener {
-
-            listener.onClickFavoriteDishCheckBox(holder.like, holder.titleRecipe.text.toString())
-
-            if (!holder.like.isChecked) {
-                listener.deleteFavoriteDish(holder.titleRecipe.text.toString())
-            } else {
-                val recipeDish = DishEntity(
+            listener.onClickFavoriteDishCheckBox(
+                holder.like,
+                holder.titleRecipe.text.toString(),
+                DishEntity(
                     null, holder.titleRecipe.text.toString(),
                     holder.rating.rating,
                     holder.calories.text.toString(),
                     holder.like.isChecked
                 )
-                listener.saveFavoriteDish(recipeDish)
-            }
+            )
         }
     }
 
     interface Listener {
-        fun onClickFavoriteDishCheckBox(like: CheckBox, dishName: String)
-        fun saveFavoriteDish(dish: DishEntity)
-        fun deleteFavoriteDish(dishName: String)
+        fun onClickFavoriteDishCheckBox(like: CheckBox, dishName: String, dish: DishEntity)
+        suspend fun saveFavoriteDish(dish: DishEntity)
+        suspend fun deleteFavoriteDish(dishName: String)
     }
 }

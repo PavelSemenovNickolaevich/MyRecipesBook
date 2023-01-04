@@ -11,10 +11,10 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import ru.android.myrecipesbook.R
-import ru.android.myrecipesbook.adapter.DishAdapterEntityVertical
 import ru.android.myrecipesbook.adapter.DishAdapterVertical
 import ru.android.myrecipesbook.databinding.FragmentFavoriteBinding
 import ru.android.myrecipesbook.db.entity.DishEntity
+import ru.android.myrecipesbook.repository.DishRepository
 import ru.android.myrecipesbook.repository.FakeFoodRepository
 import ru.android.myrecipesbook.ui.viewmodel.FavoriteViewModel
 import timber.log.Timber
@@ -53,22 +53,41 @@ class FavoriteFragment : Fragment(), DishAdapterVertical.Listener {
         }
         )
 
-        favoriteViewModel.errorLiveDataPublicField.observe(this.viewLifecycleOwner, Observer<String> { error ->
-            Toast.makeText(context, error, Toast.LENGTH_SHORT).show()
-        })
+        favoriteViewModel.errorLiveDataPublicField.observe(
+            this.viewLifecycleOwner,
+            Observer<String> { error ->
+                Toast.makeText(context, error, Toast.LENGTH_SHORT).show()
+            })
 
         return root
     }
 
-    override fun onClickFavoriteDishCheckBox(like: CheckBox, dishName: String) {
-//        TODO("Not yet implemented")
+    override fun onClickFavoriteDishCheckBox(like: CheckBox, dishName: String, dish: DishEntity) {
+
+//        if (like.isChecked) {
+//            searhViewModelVertical.saveFavoriteDish(dish)
+//            Toast.makeText(
+//                context,
+//                "\"$dishName\" был сохранен в любимых рецептах",
+//                Toast.LENGTH_LONG
+//            ).show()
+//        } else {
+//            searhViewModelVertical.deleteFavoriteDish(dishName)
+//            Toast.makeText(
+//                context,
+//                "\"$dishName\" был удален из любимых рецептов",
+//                Toast.LENGTH_LONG
+//            ).show()
+//        }
     }
 
     override suspend fun saveFavoriteDish(dish: DishEntity) {
-//        TODO("Not yet implemented")
+        val db = context?.let { DishRepository(it) }
+        db?.saveFavoriteDish(dish)
     }
 
-    override fun deleteFavoriteDish(dishName: String) {
-//        TODO("Not yet implemented")
+    override suspend fun deleteFavoriteDish(dishName: String) {
+        val db = context?.let { DishRepository(it) }
+        db?.deleteFavoriteDish(dishName)
     }
 }

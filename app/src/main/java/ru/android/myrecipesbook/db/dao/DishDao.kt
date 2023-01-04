@@ -14,11 +14,11 @@ interface DishDao {
     suspend fun saveFavoriteDish(dish: DishEntity)
 
     @Query("SELECT * FROM  dish")
-    fun getFavoriteDish(): List<DishEntity>
+    suspend fun getFavoriteDish(): List<DishEntity>
 
     @Query("SELECT * FROM  dish WHERE isFavorite='1'")
-    fun getFavoriteDishByLike(): List<DishEntity>
+    suspend fun getFavoriteDishByLike(): List<DishEntity>
 
     @Query("DELETE FROM dish WHERE title=:title")
-    fun deleteFavoriteDish(vararg title: String)
+    suspend fun deleteFavoriteDish(vararg title: String)
 }
