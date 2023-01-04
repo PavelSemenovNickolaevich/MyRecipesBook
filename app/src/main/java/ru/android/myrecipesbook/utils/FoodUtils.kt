@@ -1,6 +1,7 @@
-package ru.android.myrecipesbook
+package ru.android.myrecipesbook.utils
 
 import androidx.annotation.DrawableRes
+import ru.android.myrecipesbook.R
 import ru.android.myrecipesbook.enums.Ingredients
 
 class FoodUtils {

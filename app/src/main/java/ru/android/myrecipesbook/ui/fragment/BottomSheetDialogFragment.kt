@@ -1,4 +1,4 @@
-package ru.android.myrecipesbook
+package ru.android.myrecipesbook.ui.fragment
 
 import android.os.Bundle
 import android.util.Log
@@ -11,9 +11,11 @@ import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResult
 import com.google.android.material.chip.ChipGroup
+import ru.android.myrecipesbook.R
 import ru.android.myrecipesbook.databinding.FragmentBottomSheetDialogBinding
 import ru.android.myrecipesbook.enums.FoodCategory
 import ru.android.myrecipesbook.enums.Meals
+import timber.log.Timber
 import java.io.Serializable
 
 
@@ -38,7 +40,7 @@ class BottomSheetDialogFragment :
     ): View? {
         binding = FragmentBottomSheetDialogBinding.inflate(inflater, container, false)
         val root = binding.root
-        Log.d("This is log for on Create", "CREEEEEEATTEED")
+        Timber.tag("This is log for on Create").d("CREEEEEEATTEED")
 
         val countOfServingSeekBar: SeekBar = binding.countOfServingSeekbar
         val countOfServingValue: TextView = binding.countOfServingSeekbarValue

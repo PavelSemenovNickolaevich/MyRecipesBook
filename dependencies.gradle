@@ -15,10 +15,21 @@ ext.versions = [
         annotation            : '1.5.0',
         cardview              : '1.0.0',
         fragment              : '1.5.4',
-        recyclerview          : '1.2.1'
+        recyclerview          : '1.2.1',
+        okhttp3               : '4.7.2',
+        retrofit              : '2.9.0',
+        picasso               : '2.8',
+        retrofitGson          : '2.9.0',
+        roomRuntime           : '2.4.0-alpha04',
+        roomKtx               : '2.4.0-alpha04',
+        roomCompiler          : '2.4.0-alpha04',
+        livedata              : '2.5.1',
+        coroutinesCore        : '1.6.1',
+        coroutinesAndroid     : '1.6.1'
 ]
 
 ext.libraries = [
+
         coreKtx : "androidx.core:core-ktx:$versions.coreKtx",
         appcompat : "androidx.appcompat:appcompat:$versions.appcompat",
         material : "com.google.android.material:material:$versions.material",
@@ -31,6 +42,16 @@ ext.libraries = [
         annotation: "androidx.annotation:annotation:$versions.annotation",
         cardview: "androidx.cardview:cardview:$versions.cardview",
         fragment: "androidx.fragment:fragment-ktx:$versions.fragment",
-        recyclerview: "androidx.recyclerview:recyclerview:$versions.recyclerview"
+        recyclerview: "androidx.recyclerview:recyclerview:$versions.recyclerview",
+        okhttp3: "com.squareup.okhttp3:logging-interceptor:$versions.okhttp3",
+        retrofitGson: "com.squareup.retrofit2:converter-gson:$versions.retrofitGson",
+        retrofit: "com.squareup.retrofit2:retrofit:$versions.retrofit",
+        picasso: "com.squareup.picasso:picasso:$versions.picasso",
+        roomRuntime: "androidx.room:room-runtime:$versions.roomRuntime",
+        roomKtx: "androidx.room:room-ktx:$versions.roomKtx",
+        roomCompiler: "androidx.room:room-compiler:$versions.roomCompiler",
+        livedata: "androidx.lifecycle:lifecycle-livedata-ktx:$versions.livedata",
+        coroutinesCore: "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutinesCore",
+        coroutinesAndroid: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutinesAndroid"
 
 ]

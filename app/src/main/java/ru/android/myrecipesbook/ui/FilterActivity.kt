@@ -1,7 +1,8 @@
-package ru.android.myrecipesbook
+package ru.android.myrecipesbook.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import ru.android.myrecipesbook.R
 
 class FilterActivity : AppCompatActivity() {
 

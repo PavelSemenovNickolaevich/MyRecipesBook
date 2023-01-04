@@ -1,7 +1,9 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
+
 
 android {
     namespace 'ru.android.myrecipesbook'
@@ -14,6 +16,12 @@ android {
         versionCode versions.versionCode
         versionName "1.0"
 
+        kapt {
+            arguments {
+                arg("room.schemaLocation", "$projectDir/schemas")
+            }
+        }
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -21,6 +29,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            buildConfigField "String", 'BASE_URL', "\"https://61e46d241a976f00176ee4a1.mockapi.io/api/v1/\""
         }
     }
     compileOptions {
@@ -37,6 +49,8 @@ android {
 
 dependencies {
 
+    def room_version = "2.4.3"
+
     implementation libraries.coreKtx
     implementation libraries.appcompat
     implementation libraries.material
@@ -49,4 +63,23 @@ dependencies {
     implementation libraries.cardview
     implementation libraries.recyclerview
     implementation libraries.fragment
+    implementation libraries.retrofit
+    implementation libraries.okhttp3
+    implementation libraries.picasso
+    implementation libraries.retrofitGson
+    implementation libraries.roomRuntime
+    implementation libraries.roomKtx
+    kapt libraries.roomCompiler
+    implementation libraries.livedata
+    implementation libraries.coroutinesCore
+    implementation libraries.coroutinesAndroid
+
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+
+
+//    androidTestImplementation"androidx.room:room-testing:$rootProject.roomVersion"
+//    implementation "androidx.room:room-rxjava2:$rootProject.roomVersion"
 }

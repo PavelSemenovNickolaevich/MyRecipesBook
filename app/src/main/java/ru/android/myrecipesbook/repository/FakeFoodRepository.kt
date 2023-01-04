@@ -1,5 +1,6 @@
-package ru.android.myrecipesbook
+package ru.android.myrecipesbook.repository
 
+import ru.android.myrecipesbook.R
 import ru.android.myrecipesbook.enums.FoodCategory
 import ru.android.myrecipesbook.enums.Ingredients
 import ru.android.myrecipesbook.enums.Meals
@@ -36,7 +37,7 @@ object FakeFoodRepository {
         10,
         400,
         listOf(),
-        false,
+        true,
         4,
         R.drawable.toast_with_sugar_image,
         2
@@ -116,7 +117,9 @@ object FakeFoodRepository {
     }
 
     fun getFilterListByCalories(list: List<Recipe>, calories: Int, isMore: Boolean): List<Recipe> {
-        return if (isMore) list.filter { it.calories > calories } else list.filter { it.calories < calories }
+        return if (isMore) list.filter {
+            (it.calories ?: -1) > calories
+        } else list.filter { it.calories!! < calories }
     }
 
     fun getFilterRecipesByTime(list: List<Recipe>, timeMax: Long, timeMin: Long): List<Recipe> {

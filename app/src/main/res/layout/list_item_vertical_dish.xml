@@ -56,7 +56,8 @@
                 <LinearLayout
                     android:id="@+id/rec_rating_it"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
                     <RatingBar
                         android:id="@+id/rec_ratingBar_it"
@@ -176,7 +177,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/marginStartMainActivity_40dp"
                     android:button="@drawable/checkbox_states"
-                    android:checked="true"
+                    android:checked="false"
                     android:clickable="true"
                     android:focusable="true"
                     android:gravity="center" />
