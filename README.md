@@ -9,7 +9,7 @@
 - Coroutines
 - ViewModel, LiveData
 
-![Screenshot1](/images/img.png =100x20)
+<img alt="Screenshot1" height="100" src="/images/img.png" width="100"/>
 ![Screenshot2](/images/img_1.png)
 ![Screenshot3](/images/img_2.png)
 ![Screenshot4](/images/img_3.png)
